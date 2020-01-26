@@ -1,0 +1,184 @@
+/**************
+Main color
+Dark Brown :    #661721
+Light Brown :   #7A4B44
+Green:          #56A687
+Light Blue:     #0000F8
+Yellow :        #EEEE22
+ */
+
+
+html, body {
+    height: 100%;
+}
+body {
+    background-color: aliceblue;
+}
+footer {
+    background-color:  #dfedd6;
+    opacity: .8;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    margin-top: .5em;
+    height: 120px;
+    line-height: 1.6;
+    flex-shrink: 0;
+}
+
+body {
+    font-size: 100%;
+    margin: auto;
+    width:800px;
+    padding: 0;
+    background-attachment: fixed;
+}
+/*************************
+use for stivky footer
+**************************/
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex:1 0 auto; /* --Shortcut for flex-grow, flex-shrink, flex-basic*/
+}
+/*********************
+Footer
+*********************/
+footer {
+    background-color:  #dfedd6;
+    opacity: .8;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    margin-top: .5em;
+    height: 120px;
+    line-height: 1.6;
+    flex-shrink: 0;
+}
+
+footer p {
+    margin: 0 1em;
+    padding-top: .2em;
+}
+
+.ftCopyLeft {
+    margin: 0 1em;
+    padding-top: .2em;
+    float: left;
+}
+.ftCopyRight {
+    margin: 0 1em;
+    padding-top: .2em;
+    text-align: right;
+}
+
+
+/*************
+  Background Garden Tips page
+*************/
+
+#background {
+    /*background-image: url(../images/flowerBackground.jpg);*/
+    padding: 3em;
+}
+#background2, #background1 {
+    border: 2px solid #8D0A00;
+    background-color: #fff;
+    opacity: .8;
+    margin: 0 auto;
+    padding: 2em;
+    z-index: -9999;
+}
+
+
+nav {
+    background-color:  lightblue;
+    padding: 10px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 0px 0px 5px 5px;
+    margin-left: 0;
+    font-family: 'Gothic A1', sans-serif;
+
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-family: 'Gothic A1', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+nav ul li {
+    position: relative;
+    padding: 1em;
+    font-family: 'Gothic A1', sans-serif;
+    line-height: 1.6;
+}
+
+nav ul li:hover {
+    background-color: #0000F8;
+    opacity: 1;
+    color: white;
+}
+
+nav ul li a {
+    color: black;
+    /*font-style: quicksand;*/
+    font-size: 18px;
+    text-decoration: none;
+    padding: 1em;
+    width: 200px;
+    font-family: 'Gothic A1', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+nav ul li a:hover {
+    color: white;
+    font-weight: bold;
+    background-color: #0000F8;
+    opacity: 1;
+}
+
+/*****************
+ Sub-navigation
+*****************/
+
+nav ul ul{
+    position: absolute;
+    left: 0;
+    margin-top: 1em;
+    display: none;
+    font-family: 'Gothic A1', sans-serif;
+    background-color: #a76b63;
+}
+
+nav ul li ul:hover,
+nav ul li:hover ul,
+nav ul li:focus-within ul {
+    display: block;
+    font-family: 'Gothic A1', sans-serif;
+    min-width: 300px;
+    font-weight: bold;
+}
+
+/*************************************
+	Skip link
+*************************************/
+/*Do not use display:none; because screenreader can not read it*/
+.skipLink {
+    background-color: #dfedd6;
+    position: absolute;
+    left: -1000px;
+}
+.skipLink:focus {
+    background-color: #dfedd6;
+    left: 0;
+}
+.skipLink:hover {
+    background-color: #dfedd6;
+    color: red;
+    left: 0;
+}
