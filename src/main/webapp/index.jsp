@@ -23,6 +23,7 @@
             <li role="menuitem"><a href="admission.html">ADMISSION</a></li>
             <li role="menuitem"><a href="calendar.html">SCHOOL CALENDAR</a></li>
             <li role="menuitem"><a href="resources.html">RESOURCES</a></li>
+            <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
             <!--<li role="menuitem"><a href="#">Activity <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
                 <ul>
                     <li role="menuitem"><a href="#">Volunteer</a></li>

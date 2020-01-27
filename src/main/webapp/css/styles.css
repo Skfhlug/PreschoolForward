@@ -42,6 +42,10 @@ body {
 main {
     flex:1 0 auto; /* --Shortcut for flex-grow, flex-shrink, flex-basic*/
 }
+
+form {
+    width: 800px;
+}
 /*********************
 Footer
 *********************/
