@@ -8,14 +8,13 @@ Yellow :        #EEEE22
  */
 
 
-html, body {
+html {
     height: 100%;
 }
-body {
-    background-color: aliceblue;
-}
+
 footer {
-    background-color:  #dfedd6;
+    background-color:  #ffffce;
+    border: 3px #eeee22;
     opacity: .8;
     padding-top: 1em;
     padding-bottom: .5em;
@@ -28,9 +27,11 @@ footer {
 body {
     font-size: 100%;
     margin: auto;
-    width:800px;
+    width: 1000px;
     padding: 0;
     background-attachment: fixed;
+    background-color: #fffff3;
+
 }
 /*************************
 use for stivky footer
@@ -50,7 +51,7 @@ form {
 Footer
 *********************/
 footer {
-    background-color:  #dfedd6;
+    background-color:  #ffffce;
     opacity: .8;
     padding-top: 1em;
     padding-bottom: .5em;
@@ -74,24 +75,6 @@ footer p {
     margin: 0 1em;
     padding-top: .2em;
     text-align: right;
-}
-
-
-/*************
-  Background Garden Tips page
-*************/
-
-#background {
-    /*background-image: url(../images/flowerBackground.jpg);*/
-    padding: 3em;
-}
-#background2, #background1 {
-    border: 2px solid #8D0A00;
-    background-color: #fff;
-    opacity: .8;
-    margin: 0 auto;
-    padding: 2em;
-    z-index: -9999;
 }
 
 
@@ -123,7 +106,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-    background-color: #0000F8;
+    background-color: #EEEE22;
     opacity: 1;
     color: white;
 }
@@ -142,7 +125,7 @@ nav ul li a {
 nav ul li a:hover {
     color: white;
     font-weight: bold;
-    background-color: #0000F8;
+    background-color: #EEEE22;
     opacity: 1;
 }
 
@@ -185,4 +168,21 @@ nav ul li:focus-within ul {
     background-color: #dfedd6;
     color: red;
     left: 0;
+}
+
+
+/*************
+  Background
+*************/
+
+#background {
+    padding: 3em;
+}
+#background2, #background1 {
+    border: 3px solid #EEEE22;
+    background-color: #ffffce;
+    opacity: .8;
+    margin: 0 auto;
+    padding: 2em;
+    z-index: -9999;
 }

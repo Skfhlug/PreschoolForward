@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css"/>
 </head>
 
 <body>
@@ -18,11 +18,11 @@
 <header>
     <nav aria-label="main menu">
         <ul role="menubar">
-            <li role="menuitem"><a href=index.html>Home</a></li>
-            <li role="menuitem"><a href=gallery.html>EVENT GALLERY</a></li>
-            <li role="menuitem"><a href="admission.html">ADMISSION</a></li>
-            <li role="menuitem"><a href="calendar.html">SCHOOL CALENDAR</a></li>
-            <li role="menuitem"><a href="resources.html">RESOURCES</a></li>
+            <li role="menuitem"><a href=index.jsp>Home</a></li>
+            <li role="menuitem"><a href=gallery.html>Event Gallery</a></li>
+            <!--<li role="menuitem"><a href="admission.html">ADMISSION</a></li>
+            <li role="menuitem"><a href="calendar.html">SCHOOL CALENDAR</a></li>-->
+            <li role="menuitem"><a href="resources.html">Resource</a></li>
             <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
             <!--<li role="menuitem"><a href="#">Activity <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
                 <ul>
@@ -92,14 +92,14 @@
 
 <footer>
     <div class="ftCopyLeft">
-        <p><i class="fas fa-phone"></i> CONTACT US :<a href="tel:+01-773-631-3129"> 773-631-3129</a></p>
-        <p><i class="fas fa-envelope"></i> Email :<a href="mailto:willowgarden@somemail.com"> willowgarden@somemail.com</a></p>
+        <p><i class="fas fa-phone"></i> CONTACT US :<a href="tel:+01-773-631-3129"> (773) 631-3129</a></p>
+        <p><i class="fas fa-envelope"></i> Email :<a href="mailto:whitesteeple@somemail.com"> whitesteeple@somemail.com</a></p>
         <p><i class="fas fa-clock"></i> Office Hours: Mon-Fri 8:00 - 22:00</p>
     </div>
     <div class="ftCopyRight">
-        <p> Willow Garden|  <a href="#">Privacy Policy</a></p>
+        <p> White Steeple Schoool|  <a href="#">Privacy Policy</a></p>
         <p>Design by Suparin Fhlug</p>
-        <p>&copy; Willow Garden, 123 Main Road, Madison, WI 53704</p>
+        <p>&copy; White Steeple School, 5849 N Nina Ave, Chicago, IL 60631</p>
     </div>
 </footer>
 </body>
