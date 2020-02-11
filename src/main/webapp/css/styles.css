@@ -79,7 +79,7 @@ footer p {
 
 
 nav {
-    background-color:  lightblue;
+    background-color:  #dfedd6;
     padding: 10px;
     padding-top: 20px;
     margin-bottom: 30px;
@@ -108,7 +108,7 @@ nav ul li {
 nav ul li:hover {
     background-color: #EEEE22;
     opacity: 1;
-    color: white;
+    color: #0000F8;
 }
 
 nav ul li a {
@@ -139,7 +139,7 @@ nav ul ul{
     margin-top: 1em;
     display: none;
     font-family: 'Gothic A1', sans-serif;
-    background-color: #a76b63;
+    background-color: #dfedd6;
 }
 
 nav ul li ul:hover,
