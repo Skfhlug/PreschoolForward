@@ -12,5 +12,8 @@ Accept the assignment using the link provided in the Week 1 exercise. This will 
 5.Send parent RSVP
 6.Have a friendly reminder to remind parents somethings 
 
+In advance
+1. Create pdf report at the end of semesters
+2. Add bootstrap for Mobile and tablets
+
 Presentation link: https://docs.google.com/presentation/d/1KEy8LvCnLWbzcCFgUCFfD1WWZm7PbBxZ1_mrCJ6rmPI/edit#slide=id.p
-User Stories: https://docs.google.com/document/d/1bU9P-ErOx-62Db6qYHQW3uB34lUObLMgqirEwB9Sxwg/edit
