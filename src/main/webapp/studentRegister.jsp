@@ -25,7 +25,7 @@
                 <ul>
                     <li role="menuitem"><a href="adminRegister.jsp">Admin Register</a></li>
                     <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
-                    <li role="menuitem"><a href="#">For the kids</a></li>
+                    <li role="menuitem"><a href="adminResult.jsp">AdminResult</a></li>
                 </ul>
             </li>
         </ul>
