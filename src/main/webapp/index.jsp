@@ -20,17 +20,15 @@
         <ul role="menubar">
             <li role="menuitem"><a href=index.jsp>Home</a></li>
             <li role="menuitem"><a href=gallery.html>Event Gallery</a></li>
-            <!--<li role="menuitem"><a href="admission.html">ADMISSION</a></li>
-            <li role="menuitem"><a href="calendar.html">SCHOOL CALENDAR</a></li>-->
+            <!--<li role="menuitem"><a href="admission.html">ADMISSION</a></li>-->
             <li role="menuitem"><a href="resources.html">Resource</a></li>
-            <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
-            <!--<li role="menuitem"><a href="#">Activity <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
+            <li role="menuitem"><a href="#">Rsgister <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
                 <ul>
-                    <li role="menuitem"><a href="#">Volunteer</a></li>
-                    <li role="menuitem"><a href="#">Workshops and Courses</a></li>
+                    <li role="menuitem"><a href="adminRegister.jsp">Admin Register</a></li>
+                    <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
                     <li role="menuitem"><a href="#">For the kids</a></li>
                 </ul>
-            </li>-->
+            </li>
         </ul>
     </nav>
 </header>
