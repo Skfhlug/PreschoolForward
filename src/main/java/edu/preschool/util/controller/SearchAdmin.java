@@ -27,9 +27,9 @@ public class SearchAdmin extends HttpServlet {
 
         AdminDao adminDao = new AdminDao();
         if (searchTerm!=null) {
-            req.setAttribute("resultList", adminDao.getUsersByLastName(searchTerm));
+            req.setAttribute("resultList", adminDao.getByLastName(searchTerm));
         } else {
-            req.setAttribute("users", adminDao.getAllUsers());
+            req.setAttribute("users", adminDao.getAll());
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/adminResult.jsp");
