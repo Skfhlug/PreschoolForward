@@ -1,6 +1,6 @@
-package edu.preschool.util.controller;
+package edu.preschool.controller;
 
-import edu.preschool.util.persistence.AdminDao;
+import edu.preschool.persitence.AdminDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

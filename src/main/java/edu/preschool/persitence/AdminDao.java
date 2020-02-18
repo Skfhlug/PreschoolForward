@@ -1,5 +1,5 @@
-package edu.preschool.util.persistence;
-import edu.preschool.util.entity.Admin;
+package edu.preschool.persitence;
+import edu.preschool.entity.Admin;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,9 +22,9 @@ public class AdminDao {
      */
     public Admin getById(int id) {
         Session session = sessionFactory.openSession();
-        Admin user = session.get( Admin.class, id );
+        Admin admin = session.get( Admin.class, id );
         session.close();
-        return user;
+        return admin;
     }
     /**
      * Gets all users.
@@ -47,23 +47,26 @@ public class AdminDao {
     }
     /**
      * update user
-     * @param user  User to be inserted or updated
+     * @param admin  User to be inserted or updated
      */
-    public void saveOrUpdate(Admin user) {
+    public void saveOrUpdate(Admin admin) {
         Session session = sessionFactory.openSession();
-        session.saveOrUpdate(user);
+        Transaction transaction = session.beginTransaction();
+        session.saveOrUpdate(admin);
+        transaction.commit();
         session.close();
+
     }
 
     /**
      * update user
-     * @param user  User to be inserted or updated
+     * @param admin  User to be inserted or updated
      */
-    public int insert(Admin user) {
+    public int insert(Admin admin) {
         int id = 0;
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        id = (int)session.save(user);
+        id = (int)session.save(admin);
         transaction.commit();
         session.close();
         return id;

@@ -3,6 +3,7 @@
         "-//Hibernate/Hibernate Configuration DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
+
 <hibernate-configuration>
     <session-factory>
         <property name="connection.url">jdbc:mysql://localhost:3306/PreschoolForward</property>
@@ -16,6 +17,7 @@
         <property name="hibernate.c3p0.timeout">300</property>
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
+
         <mapping class="edu.preschool.entity.Admin"/>
     </session-factory>
 </hibernate-configuration>

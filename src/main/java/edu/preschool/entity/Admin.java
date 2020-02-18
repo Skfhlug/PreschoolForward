@@ -1,4 +1,4 @@
-package edu.preschool.util.entity;
+package edu.preschool.entity;
 
 
 import org.hibernate.annotations.GenericGenerator;
@@ -22,6 +22,7 @@ public class Admin {
 
     @Column(name = "last_name")
     private String lastName;
+
     private String username;
     private String password;
     private String email;

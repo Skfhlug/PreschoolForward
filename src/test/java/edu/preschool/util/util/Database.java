@@ -1,4 +1,4 @@
-package edu.preschool.util;
+package edu.preschool.util.util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
