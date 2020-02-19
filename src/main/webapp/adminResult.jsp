@@ -13,7 +13,7 @@
 </div>
 
 <p>-------------------------------------------------------------------------------------------</p>
-<table>
+<table class="adminTable">
     <tr>
         <th>ID</th>
         <th>First Name</th>
@@ -27,7 +27,7 @@
             <td>${user.id}</td>
             <td>${user.firstName}</td>
             <td>${user.lastName}</td>
-            <td>${user.userName}</td>
+            <td>${user.username}</td>
             <td>${user.email}</td>
             <td>${user.phone}</td>
         </tr>
@@ -43,7 +43,7 @@
     <input type="submit" name="" value="Search" />
 </form>
 
-<table>
+<table class="adminTable">
     <tr>
         <th>ID</th>
         <th>First Name</th>
@@ -57,7 +57,7 @@
             <td>${foundList.id}</td>
             <td>${foundList.firstName}</td>
             <td>${foundList.lastName}</td>
-            <td>${foundList.userName}</td>
+            <td>${foundList.username}</td>
             <td>${foundList.email}</td>
             <td>${foundList.phone}</td>
         </tr>

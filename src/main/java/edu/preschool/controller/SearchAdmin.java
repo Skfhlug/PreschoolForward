@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 @WebServlet(
         name = "searchAdmin",
-        urlPatterns = {"/searchAdmin"}
+        urlPatterns = { "/searchAdmin" }
 )
 public class SearchAdmin extends HttpServlet {
     @Override
@@ -26,11 +26,13 @@ public class SearchAdmin extends HttpServlet {
         String  searchTerm = req.getParameter("searchTerm" );
 
         AdminDao adminDao = new AdminDao();
-        if (searchTerm!=null) {
-            req.setAttribute("resultList", adminDao.getByLastName(searchTerm));
-        } else {
+        if (searchTerm.length()==0) {
             req.setAttribute("users", adminDao.getAll());
+        } else {
+            req.setAttribute("resultList", adminDao.getByLastName(searchTerm));
         }
+
+
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/adminResult.jsp");
         dispatcher.forward(req, resp);
