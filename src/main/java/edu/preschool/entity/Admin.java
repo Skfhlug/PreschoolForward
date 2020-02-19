@@ -5,6 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.lang.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -12,7 +14,6 @@ import java.lang.*;
  *
  * @author Suparin Fhlug
  */
-
 @Entity(name = "Admin")
 @Table(name = "admin")
 public class Admin {
@@ -32,10 +33,28 @@ public class Admin {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
+    //cascade = CascadeType.ALL => mean if we delete admin, we will delete all of reminder that was made by that admin
+    //@OneToMany(mappedBy = "admin", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Reminder> reminders = new HashSet<>();
+
+    /**
+     * Instantiates a new Admin.
+     */
     public Admin() {
 
     }
 
+    /**
+     * Instantiates a new Admin.
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param username  the username
+     * @param password  the password
+     * @param email     the email
+     * @param phone     the phone
+     */
     public Admin(String firstName, String lastName, String username, String password, String email, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -171,6 +190,44 @@ public class Admin {
         this.id = id;
     }
 
+
+    /**
+     * Gets reminder.
+     *
+     * @return the reminder
+     */
+    public Set<Reminder> getReminders() {
+        return reminders;
+    }
+
+    /**
+     * Sets reminder.
+     *
+     * @param reminders the reminder
+     */
+    public void setRemainder(Set<Reminder> reminders) {
+        this.reminders = reminders;
+    }
+
+    /**
+     * Add reminder.
+     *
+     * @param reminder the reminder
+     */
+    public void addReminder(Reminder reminder) {
+        reminders.add(reminder);
+        reminder.setAdmin(this);
+    }
+
+    /**
+     * Remove reminder.
+     *
+     * @param reminder the reminder
+     */
+    public void removeReminder(Reminder reminder) {
+        reminders.add(reminder);
+        reminder.setAdmin(null);
+    }
     @Override
     public String toString() {
         return "Admin{" +

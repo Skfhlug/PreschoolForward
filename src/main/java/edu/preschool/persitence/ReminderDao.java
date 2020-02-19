@@ -1,6 +1,6 @@
 package edu.preschool.persitence;
 
-import edu.preschool.entity.Admin;
+import edu.preschool.entity.Reminder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -13,46 +13,46 @@ import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-public class AdminDao {
+public class ReminderDao {
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
     /**
      * Get user by id
      */
-    public Admin getById(int id) {
+    public Reminder getById(int id) {
         Session session = sessionFactory.openSession();
-        Admin admin = session.get( Admin.class, id );
+        Reminder Reminder = session.get( Reminder.class, id );
         session.close();
-        return admin;
+        return Reminder;
     }
     /**
-     * Gets all users.
+     * Gets all reminders.
      *
-     * @return the all users
+     * @return the all reminders
      */
-    public List<Admin> getByLastName(String lastName) {
+    public List<Reminder> getByLastName(String lastName) {
 
         logger.debug("Searching for: {}", lastName);
 
         Session session = sessionFactory.openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Admin> query = builder.createQuery(Admin.class);
-        Root<Admin> root = query.from(Admin.class);
+        CriteriaQuery<Reminder> query = builder.createQuery(Reminder.class);
+        Root<Reminder> root = query.from(Reminder.class);
         Expression<String> propertyPath = root.get("lastName");
         query.where(builder.like(propertyPath, "%" + lastName + "%"));
-        List<Admin> users = session.createQuery(query).getResultList();
+        List<Reminder> reminders = session.createQuery(query).getResultList();
         session.close();
-        return users;
+        return reminders;
     }
     /**
      * update user
-     * @param admin  User to be inserted or updated
+     * @param Reminder  User to be inserted or updated
      */
-    public void saveOrUpdate(Admin admin) {
+    public void saveOrUpdate(Reminder Reminder) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.saveOrUpdate(admin);
+        session.saveOrUpdate(Reminder);
         transaction.commit();
         session.close();
 
@@ -60,24 +60,23 @@ public class AdminDao {
 
     /**
      * update user
-     * @param admin  User to be inserted or updated
+     * @param Reminder  User to be inserted or updated
      */
-    public int insert(Admin admin) {
+    public int insert(Reminder Reminder) {
         int id = 0;
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        id = (int)session.save(admin);
+        id = (int)session.save(Reminder);
         transaction.commit();
         session.close();
         return id;
-
     }
 
     /**
      * Delete a user
      * @param user User to be deleted
      */
-    public void delete(Admin user) {
+    public void delete(Reminder user) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.delete(user);
@@ -86,63 +85,63 @@ public class AdminDao {
     }
 
 
-    /** Return a list of all users
+    /** Return a list of all reminders
      *
-     * @return All users
+     * @return All reminders
      */
-    public List<Admin> getAll() {
+    public List<Reminder> getAll() {
 
         Session session = sessionFactory.openSession();
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Admin> query = builder.createQuery(Admin.class );
-        Root<Admin> root = query.from( Admin.class );
-        List<Admin> users = session.createQuery( query ).getResultList();
+        CriteriaQuery<Reminder> query = builder.createQuery(Reminder.class );
+        Root<Reminder> root = query.from( Reminder.class );
+        List<Reminder> reminders = session.createQuery( query ).getResultList();
 
-        logger.debug("The list of users " + users);
+        logger.debug("The list of reminders " + reminders);
         session.close();
 
-        return users;
+        return reminders;
     }
 
     /**
      * Get user by property (exact match)
      * sample usage: getByPropertyEqual("lastname", "Curry")
      */
-    public List<Admin> getByPropertyEqual(String propertyName, String value) {
+    public List<Reminder> getByPropertyEqual(String propertyName, String value) {
         Session session = sessionFactory.openSession();
 
         logger.debug("Searching for user with " + propertyName + " = " + value);
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Admin> query = builder.createQuery(Admin.class );
-        Root<Admin> root = query.from( Admin.class );
+        CriteriaQuery<Reminder> query = builder.createQuery(Reminder.class );
+        Root<Reminder> root = query.from( Reminder.class );
         query.select(root).where(builder.equal(root.get(propertyName), value));
-        List<Admin> users = session.createQuery( query ).getResultList();
+        List<Reminder> reminders = session.createQuery( query ).getResultList();
 
         session.close();
-        return users;
+        return reminders;
     }
 
     /**
      * Get user by property (like)
      * sample usage: getByPropertyLike("lastname", "C")
      */
-    public List<Admin> getByPropertyLike(String propertyName, String value) {
+    public List<Reminder> getByPropertyLike(String propertyName, String value) {
         Session session = sessionFactory.openSession();
 
         logger.debug("Searching for user with {} = {}",  propertyName, value);
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Admin> query = builder.createQuery( Admin.class );
-        Root<Admin> root = query.from( Admin.class );
+        CriteriaQuery<Reminder> query = builder.createQuery( Reminder.class );
+        Root<Reminder> root = query.from( Reminder.class );
         Expression<String> propertyPath = root.get(propertyName);
 
         query.where(builder.like(propertyPath, "%" + value + "%"));
 
-        List<Admin> users = session.createQuery( query ).getResultList();
+        List<Reminder> reminders = session.createQuery( query ).getResultList();
         session.close();
-        return users;
+        return reminders;
     }
 
 }
