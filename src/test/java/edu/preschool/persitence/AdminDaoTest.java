@@ -5,10 +5,13 @@ import edu.preschool.entity.Reminder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+
 import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+//one to many
 
 /**
  * The type Admin dao test.
@@ -78,6 +81,26 @@ class AdminDaoTest {
 
 
     /**
+     * Insert.
+     */
+    @Test
+    void insertWithDaoSuccess() {
+        Admin newAdmin = new Admin("Tony", "Adam", "fflintstone", "11111111", "anne@somemail.com","2525252525");
+        String reminderTitle = "Title";
+        String reminderDescription = "Test Description";
+        int status = 0;
+        Reminder reminder = new Reminder(reminderTitle ,reminderDescription,status, newAdmin);
+        newAdmin.addReminder(reminder);
+
+        int id = dao.insert(newAdmin);
+
+        assertNotEquals(0,id);
+        Admin insertedAdmin = dao.getById(id);
+        assertEquals("Tony", insertedAdmin.getFirstName());
+        assertEquals(1, insertedAdmin.getReminders().size());
+    }
+
+    /**
      * Delete.
      */
     @Test
@@ -111,7 +134,7 @@ class AdminDaoTest {
      */
     @Test
     void getByPropertyLike() {
-        List<Admin> admins = dao.getByPropertyLike("lastName", "j");
+        List<Admin> admins = dao.getByPropertyLike("lastName", "a");
         assertEquals(1, admins.size());
     }
 }

@@ -23,6 +23,8 @@ public class Reminder {
     @ManyToOne
     private Admin admin;
 
+    public Reminder() {
+    }
 
     /**
      * Instantiates a new Reminder.
