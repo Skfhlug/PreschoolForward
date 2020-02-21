@@ -30,7 +30,7 @@ class ReminderDaoTest {
         dao = new ReminderDao();
 
         Database database = Database.getInstance();
-        database.runSQL("cleandb.sql");
+        //database.runSQL("cleandb.sql");
     }
     /**
      * Gets all.
@@ -38,7 +38,7 @@ class ReminderDaoTest {
     @Test
     void getAll() {
         List<Reminder> reminders = dao.getAll();
-        assertEquals(4, reminders.size());
+        assertEquals(3, reminders.size());
 
     }
     /**
@@ -110,7 +110,8 @@ class ReminderDaoTest {
      */
     @Test
     void getByPropertyLike() {
-        List<Reminder> reminders = dao.getByPropertyLike("description", "Somethings in the first reminder");
+        List<Reminder> reminders = dao.getByPropertyLike("description", "Somethings in the Fourth reminder");
         assertEquals(1, reminders.size());
+        assertEquals(4, reminders.get(0).getId());
     }
 }

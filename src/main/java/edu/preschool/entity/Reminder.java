@@ -8,7 +8,7 @@ import javax.persistence.*;
 /**
  * The type Reminder.
  */
-@Entity(name="Reminder")
+@Entity(name="reminder")
 @Table(name="reminder")
 public class Reminder {
 
