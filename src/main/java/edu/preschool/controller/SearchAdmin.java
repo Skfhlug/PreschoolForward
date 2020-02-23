@@ -24,10 +24,11 @@ public class SearchAdmin extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String  searchTerm = req.getParameter("searchTerm" );
+        String searchType = req.getParameter("searchType");
 
         AdminDao adminDao = new AdminDao();
-        if (searchTerm.equals(null)) {
-            req.setAttribute("resultList", adminDao.getByLastName(searchTerm));
+        if (searchTerm.length()>0) {
+            req.setAttribute("resultList", adminDao.getByPropertyLike(searchType, searchTerm));
         } else {
             req.setAttribute("users", adminDao.getAll());
         }

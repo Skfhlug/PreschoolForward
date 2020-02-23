@@ -24,6 +24,7 @@ public class SearchReminder extends HttpServlet  {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String  searchTerm = req.getParameter("searchTerm" );
+        String  searchType = req.getParameter("searchType" );
 
         ReminderDao reminderDao = new ReminderDao();
         if (searchTerm.length()==0) {
