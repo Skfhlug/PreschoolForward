@@ -1,6 +1,6 @@
 package edu.preschool.controller;
 
-import edu.preschool.persitence.AdminDao;
+import edu.preschool.persitence.ReminderDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,25 +16,23 @@ import java.io.IOException;
  * @author Suparin Fhlug
  */
 @WebServlet(
-        name = "searchAdmin",
-        urlPatterns = { "/searchAdmin" }
+        name = "reminder",
+        urlPatterns = { "/reminder" }
 )
-public class SearchAdmin extends HttpServlet {
+public class SearchReminder extends HttpServlet  {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String  searchTerm = req.getParameter("searchTerm" );
 
-        AdminDao adminDao = new AdminDao();
-        if (searchTerm.equals(null)) {
-            req.setAttribute("resultList", adminDao.getByLastName(searchTerm));
+        ReminderDao reminderDao = new ReminderDao();
+        if (searchTerm.length()==0) {
+            req.setAttribute("reminders", reminderDao.getAll());
         } else {
-            req.setAttribute("users", adminDao.getAll());
+            req.setAttribute("resultList", reminderDao.getByLastName(searchTerm));
         }
 
-
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/adminResult.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/reminder.jsp");
         dispatcher.forward(req, resp);
     }
 }

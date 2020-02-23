@@ -44,14 +44,6 @@ class AdminDaoTest {
 
     }
 
-    /**
-     * Gets by last name.
-     */
-    @Test
-    void getByLastName() {
-        List<Admin> admins = dao.getByLastName("j");
-        assertEquals(1, admins.size());
-    }
 
     /**
      * Save or update.

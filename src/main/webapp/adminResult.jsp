@@ -5,10 +5,9 @@
 
 <html><body>
 
-<%--TODO Pretty up the results!--%>
+
 <div class="container-fluid">
-    <h2>Search Results: </h2>
-    <!--${users}-->
+    <h2>Search Admin Results: </h2>
 
 </div>
 
@@ -39,7 +38,15 @@
         <label>What are you looking for:</label>
         <input type="text" name="searchTerm" class="form-control" placeholder="last name"/><br />
     </div>
+    <div class="form-group">
+        <label>Type:</label><br />
+        <input type="radio" name="searchType" value="id" checked> ID <br>
+        <input type="radio" name="searchType" value="firstName" > First Name<br>
+        <input type="radio" name="searchType" value="lastName"> Last Name<br>
+        <input type="radio" name="searchType" value="usetname" > First Name<br>
 
+
+    </div>
     <input type="submit" name="" value="Search" />
 </form>
 

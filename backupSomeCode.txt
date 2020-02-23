@@ -1,0 +1,5 @@
+<!--<td>
+                /*<c:forEach var="admin" items="${reminder.admin}">
+                    ${admin.id} ${admin.name}<br/>
+                </c:forEach>*/
+            </td>-->

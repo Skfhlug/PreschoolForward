@@ -73,15 +73,16 @@ public class ReminderDao {
     }
 
     /**
-     * Delete a user
-     * @param user User to be deleted
+     * Delete a reminder
+     * @param reminder reminder to be deleted
      */
-    public void delete(Reminder user) {
+    public void delete(Reminder reminder) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(user);
+        session.delete(reminder);
         transaction.commit();
         session.close();
+
     }
 
 

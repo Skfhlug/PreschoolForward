@@ -30,7 +30,7 @@ class ReminderDaoTest {
         dao = new ReminderDao();
 
         Database database = Database.getInstance();
-        //database.runSQL("cleandb.sql");
+        database.runSQL("cleandb.sql");
     }
     /**
      * Gets all.
@@ -38,7 +38,7 @@ class ReminderDaoTest {
     @Test
     void getAll() {
         List<Reminder> reminders = dao.getAll();
-        assertEquals(3, reminders.size());
+        assertEquals(4, reminders.size());
 
     }
     /**
@@ -46,9 +46,9 @@ class ReminderDaoTest {
      */
     @Test
     void getById() {
-        Reminder retrievedReminder = dao.getById(3);
+        Reminder retrievedReminder = dao.getById(2);
         assertNotNull(retrievedReminder);
-        assertEquals("ThirdReminder", retrievedReminder.getReminder_title());
+        assertEquals("SecondReminder", retrievedReminder.getReminder_title());
 
     }
     /**
@@ -58,7 +58,7 @@ class ReminderDaoTest {
     void insert() {
         AdminDao adminDao = new AdminDao();
         Admin admin = adminDao.getById(1);
-        Reminder newReminder = new Reminder("Test1", "Some deteil for the note", 0, admin);
+        Reminder newReminder = new Reminder("Test1", "Some detail for the note", 0, admin);
         admin.addReminder(newReminder);
         int id = dao.insert(newReminder);
         assertNotEquals(0,id);
@@ -85,11 +85,11 @@ class ReminderDaoTest {
      */
     @Test
     void saveOrUpdate() {
-        String newDescription = "Test3";
-        Reminder reminderToUpdate = dao.getById(3);
+        String newDescription = "Test2";
+        Reminder reminderToUpdate = dao.getById(2);
         reminderToUpdate.setReminder_title(newDescription);
         dao.saveOrUpdate(reminderToUpdate);
-        Reminder retrievedReminder = dao.getById(3);
+        Reminder retrievedReminder = dao.getById(2);
         assertEquals(newDescription, retrievedReminder.getReminder_title());
     }
 
