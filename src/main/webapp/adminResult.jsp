@@ -13,14 +13,14 @@
 <form action="searchAdmin" method="GET">
     <div class="form-group">
         <label>What are you looking for:</label>
-        <input type="text" name="searchTerm" class="form-control" placeholder="last name"/><br />
+        <input type="text" name="searchTerm" class="form-control" placeholder="last name"/>
     </div>
     <div class="form-group">
-        <label>Type:</label><br />
-        <input type="radio" name="searchType" value="id" checked> ID <\t>
-        <input type="radio" name="searchType" value="firstName" > First Name <\t>
-        <input type="radio" name="searchType" value="lastName"> Last Name <\t>
-        <input type="radio" name="searchType" value="username" > Username <\t>s
+        <label>Type:</label>
+        <input type="radio" name="searchType" value="id" checked> ID &nbsp;
+        <input type="radio" name="searchType" value="firstName" > First Name &nbsp;
+        <input type="radio" name="searchType" value="lastName"> Last Name &nbsp;
+        <input type="radio" name="searchType" value="username" > Username &nbsp;
 
 
     </div>
@@ -28,6 +28,7 @@
 </form>
 
 <p>-------------------------------------------------------------------------------------------</p>
+
 <table class="adminTable">
     <tr>
         <th>ID</th>
@@ -47,18 +48,6 @@
             <td>${user.phone}</td>
         </tr>
     </c:forEach>
-
-</table>
-
-<table class="adminTable">
-    <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Phone</th>
-    </tr>
     <c:forEach var="foundList" items="${resultList}">
         <tr>
             <td>${foundList.id}</td>

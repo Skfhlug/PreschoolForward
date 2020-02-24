@@ -27,10 +27,10 @@ public class SearchReminder extends HttpServlet  {
         String  searchType = req.getParameter("searchType" );
 
         ReminderDao reminderDao = new ReminderDao();
-        if (searchTerm.length()==0) {
-            req.setAttribute("reminders", reminderDao.getAll());
+        if (searchTerm.length()>0) {
+            req.setAttribute("resultList", reminderDao.getByPropertyLike(searchType, searchTerm));
         } else {
-            req.setAttribute("resultList", reminderDao.getByLastName(searchTerm));
+            req.setAttribute("reminders", reminderDao.getAll());
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/reminder.jsp");

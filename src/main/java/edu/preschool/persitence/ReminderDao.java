@@ -140,7 +140,7 @@ public class ReminderDao {
 
         query.where(builder.like(propertyPath, "%" + value + "%"));
 
-        List<Reminder> reminders = session.createQuery( query ).getResultList();
+        List<Reminder> reminders = session.createQuery(query).getResultList();
         session.close();
         return reminders;
     }
