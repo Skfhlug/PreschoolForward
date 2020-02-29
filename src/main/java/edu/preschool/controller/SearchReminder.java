@@ -1,5 +1,7 @@
 package edu.preschool.controller;
 
+import edu.preschool.entity.Reminder;
+import edu.preschool.persitence.GenericDao;
 import edu.preschool.persitence.ReminderDao;
 
 import javax.servlet.RequestDispatcher;
@@ -26,11 +28,13 @@ public class SearchReminder extends HttpServlet  {
         String  searchTerm = req.getParameter("searchTerm" );
         String  searchType = req.getParameter("searchType" );
 
+
+        GenericDao genericDao = new GenericDao(Reminder.class);
         ReminderDao reminderDao = new ReminderDao();
         if (searchTerm.length()>0) {
-            req.setAttribute("resultList", reminderDao.getByPropertyLike(searchType, searchTerm));
+            req.setAttribute("resultList", genericDao.getByPropertyLike(searchType, searchTerm));
         } else {
-            req.setAttribute("reminders", reminderDao.getAll());
+            req.setAttribute("reminders", genericDao.getAll());
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/reminder.jsp");

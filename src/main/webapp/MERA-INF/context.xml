@@ -1,0 +1,8 @@
+<Context docBase="PreschoolForward" path="/PreschoolForward" reloadable="true">
+    <Realm className="org.apache.catalina.realm.JDBCRealm"
+           driverName="com.mysql.cj.jdbc.Driver"
+           connectionURL="jdbc:mysql://localhost:3306/PreschoolForward?user=tomcat&amp;password=tomcat"
+           userTable="admin" userNameCol="username" userCredCol="password"
+           userRoleTable="role" roleNameCol="role_name" >
+    </Realm>
+</Context>
