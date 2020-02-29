@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.lang.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -240,5 +241,23 @@ public class Admin {
                 ", id=" + id +
                 '}';
     }
+//Two methods below help update test pass
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Admin admin = (Admin) o;
+        return id == admin.id &&
+                firstName.equals(admin.firstName) &&
+                lastName.equals(admin.lastName) &&
+                username.equals(admin.username) &&
+                password.equals(admin.password) &&
+                email.equals(admin.email) &&
+                phone.equals(admin.phone);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, username, password, email, phone, id);
+    }
 }

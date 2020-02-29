@@ -19,6 +19,7 @@ class ReminderDaoTest {
      * The Dao.
      */
     ReminderDao dao;
+    GenericDao genericDao;
 
     /**
      * Sets up.
@@ -28,6 +29,7 @@ class ReminderDaoTest {
 
         //edu.preschool.util.util.Database database = edu.preschool.util.util.Database.getInstance();
         dao = new ReminderDao();
+        genericDao = new GenericDao(Reminder.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
@@ -46,7 +48,7 @@ class ReminderDaoTest {
      */
     @Test
     void getById() {
-        Reminder retrievedReminder = dao.getById(2);
+        Reminder retrievedReminder = (Reminder)genericDao.getById(2);
         assertNotNull(retrievedReminder);
         assertEquals("SecondReminder", retrievedReminder.getReminder_title());
 

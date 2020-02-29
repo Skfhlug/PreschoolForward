@@ -55,7 +55,7 @@ class AdminDaoTest {
         adminToUpdate.setLastName(newLastName);
         dao.saveOrUpdate(adminToUpdate);
         Admin retrievedAdmin = dao.getById(3);
-        assertEquals(newLastName, retrievedAdmin.getLastName());
+        assertEquals(adminToUpdate, retrievedAdmin);
     }
 
     /**
