@@ -7,7 +7,7 @@
 
 
 <div class="container-fluid">
-    <h2>Search Admin Results: </h2>
+    <h2>Search User Results: </h2>
 
 </div>
 <form action="searchUser" method="GET">
@@ -18,8 +18,8 @@
     <div class="form-group">
         <label>Type:</label>
         <input type="radio" name="searchType" value="id" checked> ID &nbsp;
-        <input type="radio" name="searchType" value="firstName" > First Name &nbsp;
-        <input type="radio" name="searchType" value="lastName"> Last Name &nbsp;
+        <input type="radio" name="searchType" value="first_name" > First Name &nbsp;
+        <input type="radio" name="searchType" value="last_name"> Last Name &nbsp;
         <input type="radio" name="searchType" value="username" > Username &nbsp;
 
 
