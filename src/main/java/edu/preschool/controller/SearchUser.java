@@ -1,6 +1,8 @@
 package edu.preschool.controller;
 
-import edu.preschool.persitence.AdminDao;
+
+import edu.preschool.entity.User;
+import edu.preschool.persitence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,33 +11,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-/**
- * A simple servlet to welcome the user.
- *
- * @author Suparin Fhlug
- */
 @WebServlet(
-        name = "searchAdmin",
-        urlPatterns = { "/searchAdmin" }
+        name = "searchUser",
+        urlPatterns = { "/searchUser" }
 )
-public class SearchAdmin extends HttpServlet {
+public class SearchUser extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String  searchTerm = req.getParameter("searchTerm" );
-        String searchType = req.getParameter("searchType");
+        String  searchType = req.getParameter("searchType" );
 
-        AdminDao adminDao = new AdminDao();
+
+        GenericDao genericDao = new GenericDao(User.class);
+
         if (searchTerm.length()>0) {
-            req.setAttribute("resultList", adminDao.getByPropertyLike(searchType, searchTerm));
+            req.setAttribute("resultList", genericDao.getByPropertyLike(searchType, searchTerm));
         } else {
-            req.setAttribute("admins", adminDao.getAll());
+            req.setAttribute("users", genericDao.getAll());
         }
 
-
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/adminResult.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/user.jsp");
         dispatcher.forward(req, resp);
     }
 }

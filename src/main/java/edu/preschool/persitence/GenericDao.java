@@ -4,14 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
-import edu.preschool.entity.Reminder;
-
-
 import javax.persistence.criteria.*;
 
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 /**

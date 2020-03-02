@@ -10,7 +10,7 @@
     <h2>Search Admin Results: </h2>
 
 </div>
-<form action="searchAdmin" method="GET">
+<form action="searchUser" method="GET">
     <div class="form-group">
         <label>What are you looking for:</label>
         <input type="text" name="searchTerm" class="form-control" placeholder="last name"/>
@@ -29,23 +29,20 @@
 
 <p>-------------------------------------------------------------------------------------------</p>
 
-<table class="adminTable">
+<table class="userTable">
     <tr>
         <th>ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Username</th>
-        <th>Email</th>
-        <th>Phone</th>
     </tr>
-    <c:forEach var="admin" items="${admins}">
+    <c:forEach var="user" items="${users}">
         <tr>
-            <td>${admin.id}</td>
-            <td>${admin.firstName}</td>
-            <td>${admin.lastName}</td>
-            <td>${admin.username}</td>
-            <td>${admin.email}</td>
-            <td>${admin.phone}</td>
+            <td>${user.id}</td>
+            <td>${user.firstName}</td>
+            <td>${user.lastName}</td>
+            <td>${user.username}</td>
+
         </tr>
     </c:forEach>
     <c:forEach var="foundList" items="${resultList}">
@@ -54,8 +51,6 @@
             <td>${foundList.firstName}</td>
             <td>${foundList.lastName}</td>
             <td>${foundList.username}</td>
-            <td>${foundList.email}</td>
-            <td>${foundList.phone}</td>
         </tr>
     </c:forEach>
 
