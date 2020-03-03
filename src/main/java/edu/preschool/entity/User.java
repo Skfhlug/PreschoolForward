@@ -5,7 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity(name = "user")
+@Entity(name = "User")
 @Table(name = "user")
 public class User {
 
@@ -21,8 +21,6 @@ public class User {
     public User() {
     }
 
-    public User(String first_name, String last_name, String password) {
-    }
 
     public User(String first_name, String last_name, String username, String password) {
         this.first_name = first_name;
