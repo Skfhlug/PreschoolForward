@@ -1,6 +1,7 @@
 package edu.preschool.controller;
 
-import edu.preschool.persitence.AdminDao;
+import edu.preschool.entity.Admin;
+import edu.preschool.persitence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,11 +27,11 @@ public class SearchAdmin extends HttpServlet {
         String  searchTerm = req.getParameter("searchTerm" );
         String searchType = req.getParameter("searchType");
 
-        AdminDao adminDao = new AdminDao();
+        GenericDao genericDao = new GenericDao(Admin.class);
         if (searchTerm.length()>0) {
-            req.setAttribute("resultList", adminDao.getByPropertyLike(searchType, searchTerm));
+            req.setAttribute("resultList", genericDao.getByPropertyLike(searchType, searchTerm));
         } else {
-            req.setAttribute("admins", adminDao.getAll());
+            req.setAttribute("admins", genericDao.getAll());
         }
 
 
