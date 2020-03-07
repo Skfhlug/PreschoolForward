@@ -3,12 +3,12 @@ package edu.preschool.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "User")
 @Table(name = "user")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -17,16 +17,22 @@ public class User {
     private String last_name;
     private String username;
     private String password;
+    private String email;
+    private String phone;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Reminder> orders = new HashSet<>();
 
     public User() {
     }
 
-
-    public User(String first_name, String last_name, String username, String password) {
+    public User(String first_name, String last_name, String username, String password, String email, String phone) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.username = username;
         this.password = password;
+        this.email = email;
+        this.phone = phone;
     }
 
     public int getId() {
@@ -69,6 +75,40 @@ public class User {
         this.password = password;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Set<Reminder> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Reminder> orders) {
+        this.orders = orders;
+    }
+
+    public void addReminder(Reminder reminder) {
+        orders.add(reminder);
+        reminder.setUser(this);
+    }
+
+
+    public void removeOrder(Reminder reminder) {
+        orders.remove(reminder);
+        reminder.setUser(null);
+    }
     @Override
     public String toString() {
         return "User{" +
@@ -77,23 +117,8 @@ public class User {
                 ", last_name='" + last_name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id &&
-                Objects.equals(first_name, user.first_name) &&
-                Objects.equals(last_name, user.last_name) &&
-                Objects.equals(username, user.username) &&
-                Objects.equals(password, user.password);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, first_name, last_name, username, password);
     }
 }

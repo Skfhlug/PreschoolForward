@@ -18,10 +18,10 @@ public class Reminder {
     private int id;
     private String reminder_title;
     private String description;
-    private int status;
+    private String status;
 
     @ManyToOne
-    private Admin admin;
+    private User user;
 
     public Reminder() {
     }
@@ -31,9 +31,8 @@ public class Reminder {
      *
      * @param reminder_title       the reminder title
      * @param reminder_description the reminder description
-     * @param newAdmin             the new admin
      */
-    public Reminder(String reminder_title, String reminder_description, Admin newAdmin) {
+    public Reminder(String reminder_title, String reminder_description, User newUser) {
     }
 
     /**
@@ -42,13 +41,13 @@ public class Reminder {
      * @param reminder_title the reminder title
      * @param description    the description
      * @param status         the status
-     * @param admin          the admin
+     * @param user          the user
      */
-    public Reminder(String reminder_title, String description, int status, Admin admin) {
+    public Reminder(String reminder_title, String description, String status, User user) {
         this.reminder_title = reminder_title;
         this.description = description;
         this.status = status;
-        this.admin = admin;
+        this.user = user;
     }
 
     /**
@@ -110,7 +109,7 @@ public class Reminder {
      *
      * @return the status
      */
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
@@ -119,26 +118,26 @@ public class Reminder {
      *
      * @param status the status
      */
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
     /**
-     * Gets admin.
+     * Gets user.
      *
-     * @return the admin
+     * @return the user
      */
-    public Admin getAdmin() {
-        return admin;
+    public User getUser() {
+        return user;
     }
 
     /**
-     * Sets admin.
+     * Sets user.
      *
-     * @param admin the admin
+     * @param user the user
      */
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
@@ -148,7 +147,7 @@ public class Reminder {
                 ", reminder_title='" + reminder_title + '\'' +
                 ", description='" + description + '\'' +
                 ", status=" + status +
-                ", admin=" + admin +
+                ", user=" + user +
                 '}';
     }
 }

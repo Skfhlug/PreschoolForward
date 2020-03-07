@@ -30,8 +30,8 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>Description</th>
-                <th>Admin ID</th>
-                <th>Admin Username</th>
+                <th>User ID</th>
+                <th>User Username</th>
                 <th>Display Status</th>
             </tr>
 
@@ -40,8 +40,8 @@
                 <td>${reminder.id}</td>
                 <td>${reminder.reminder_title}</td>
                 <td>${reminder.description}</td>
-                <td>${reminder.admin.id}</td>
-                <td>${reminder.admin.username}</td>
+                <td>${reminder.user.id}</td>
+                <td>${reminder.user.username}</td>
                 <td>${reminder.status}</td>
             </tr>
         </c:forEach>
@@ -50,8 +50,8 @@
                 <td>${reminder.id}</td>
                 <td>${reminder.reminder_title}</td>
                 <td>${reminder.description}</td>
-                <td>${reminder.admin.id}</td>
-                <td>${reminder.admin.username}</td>
+                <td>${reminder.user.id}</td>
+                <td>${reminder.user.username}</td>
                 <td>${reminder.status}</td>
             </tr>
         </c:forEach>

@@ -1,7 +1,6 @@
 package edu.preschool.persitence;
 
-import edu.preschool.entity.Admin;
-import edu.preschool.entity.Reminder;
+import edu.preschool.entity.User;
 import edu.preschool.entity.Reminder;
 import edu.preschool.util.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -55,21 +54,21 @@ class ReminderDaoTest {
     }
     /**
      * Insert.
-     */
+     *//*
     @Test
     void insert() {
-        AdminDao adminDao = new AdminDao();
-        Admin admin = adminDao.getById(1);
-        Reminder newReminder = new Reminder("Test1", "Some detail for the note", 0, admin);
-        admin.addReminder(newReminder);
+        UserDao userDao = new UserDao();
+        User user = userDao.getById(1);
+        Reminder newReminder = new Reminder("Test1", "Some detail for the note", 0, user);
+        user.addReminder(newReminder);
         int id = dao.insert(newReminder);
         assertNotEquals(0,id);
         Reminder insertedReminder = dao.getById(id);
         assertEquals("Test1", insertedReminder.getReminder_title());
-        assertNotNull(insertedReminder.getAdmin());
-        assertEquals("Nina", insertedReminder.getAdmin().getFirstName());
+        assertNotNull(insertedReminder.getUser());
+        assertEquals("Nina", insertedReminder.getUser().getFirstName());
 
-    }
+    }*/
 
 
     /**

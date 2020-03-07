@@ -3,7 +3,7 @@ Main color
 Dark Brown :    #661721
 Light Brown :   #7A4B44
 Green:          #56A687
-Light Blue:     #0000F8
+Light Blue:     #0000F8  Soft Blue: #87CEEB
 Yellow :        #EEEE22
  */
 
@@ -13,7 +13,7 @@ html {
 }
 
 footer {
-    background-color:  #ffffce;
+    background-color:  #87CEEB;
     border: 3px #eeee22;
     opacity: .8;
     padding-top: 1em;
@@ -51,7 +51,7 @@ form {
 Footer
 *********************/
 footer {
-    background-color:  #ffffce;
+    background-color:  #9de9fc;
     opacity: .8;
     padding-top: 1em;
     padding-bottom: .5em;
@@ -79,7 +79,7 @@ footer p {
 
 
 nav {
-    background-color:  #dfedd6;
+    background-color:  #9de9fc;
     padding: 10px;
     padding-top: 20px;
     margin-bottom: 30px;
@@ -123,7 +123,7 @@ nav ul li a {
     margin-bottom: 40px;
 }
 nav ul li a:hover {
-    color: white;
+    color: black;
     font-weight: bold;
     background-color: #EEEE22;
     opacity: 1;
@@ -204,10 +204,32 @@ table tr:nth-child(even){background-color: #f2f2f2;}
 
 table tr:hover {background-color: #ddd;}
 
-table.login th {
+table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #4CAF50;
     color: white;
+}
+
+table.login th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7272f2;
+    color: white;
+    max-width: 500px;
+    margin: auto;
+}
+
+/*************************
+Add button
+**************************/
+.add {
+    padding: 10px 10px 10px 10px;
+    background-color: #87CEEB;
+    color: darkblue;
+    font-size: 20px;
+    border-radius: 50px;
+    float: right;
 }

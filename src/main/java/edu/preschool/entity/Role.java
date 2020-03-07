@@ -22,11 +22,11 @@ public class Role {
     private String username;
 
     @ManyToOne
-    @JoinColumn(name = "admin_id",
-            foreignKey = @ForeignKey(name = "role_admin_admin_id_fk")
+    @JoinColumn(name = "user_id",
+            foreignKey = @ForeignKey(name = "role_user_user_id_fk")
     )
 
-    private Admin admin;
+    private User user;
 
     /**
      * Instantiates a new Role.

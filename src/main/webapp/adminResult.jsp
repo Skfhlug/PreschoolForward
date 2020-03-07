@@ -8,7 +8,6 @@
 
 <div class="container-fluid">
     <h2>Search Admin Results: </h2>
-
 </div>
 <form action="searchAdmin" method="GET">
     <div class="form-group">
@@ -26,7 +25,7 @@
     </div>
     <input type="submit" name="" value="Search" />
 </form>
-
+<a class="add" href="adminRegister.jsp">+</a>
 <p>-------------------------------------------------------------------------------------------</p>
 
 <table class="adminTable">

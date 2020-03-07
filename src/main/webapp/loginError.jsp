@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<%@include file="head.jsp"%>
 <head>
     <title>Login Failed</title>
 </head>

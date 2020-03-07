@@ -19,7 +19,8 @@
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
 
-        <mapping class="edu.preschool.entity.Admin"/>
+        <mapping class="edu.preschool.entity.Role"/>
         <mapping class="edu.preschool.entity.Reminder"/>
+        <mapping class="edu.preschool.entity.User"/>
     </session-factory>
 </hibernate-configuration>

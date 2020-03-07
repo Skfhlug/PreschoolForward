@@ -14,6 +14,8 @@ import org.hibernate.Transaction;
  */
 public class GenericDao<T> {
     private Class<T>  type;
+    public GenericDao genericDao;
+
     //private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**

@@ -39,8 +39,8 @@
     <c:forEach var="user" items="${users}">
         <tr>
             <td>${user.id}</td>
-            <td>${user.firstName}</td>
-            <td>${user.lastName}</td>
+            <td>${user.first_name}</td>
+            <td>${user.last_name}</td>
             <td>${user.username}</td>
 
         </tr>
@@ -48,8 +48,8 @@
     <c:forEach var="foundList" items="${resultList}">
         <tr>
             <td>${foundList.id}</td>
-            <td>${foundList.firstName}</td>
-            <td>${foundList.lastName}</td>
+            <td>${foundList.first_name}</td>
+            <td>${foundList.last_name}</td>
             <td>${foundList.username}</td>
         </tr>
     </c:forEach>
