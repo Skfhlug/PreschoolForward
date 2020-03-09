@@ -2,8 +2,8 @@
 <html lang="en">
 <%@include file="head.jsp"%>
 
-<div id="background1">
-    <div class = "backgroundInfo">
+<div class="background1">
+
         <img id="logo" alt="School logo" src="img/schoolLogo.png" />
         <h1 class="nameFont1">User Register</h1>
 
@@ -33,7 +33,6 @@
             <input type="submit" name="" value="Add New Admin" />
         </form>
 
-    </div>
 </div>
 
 <footer>

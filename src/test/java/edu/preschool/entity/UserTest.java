@@ -21,13 +21,6 @@ class UserTest {
     User user;
 
 
-    /**
-     * Sets up.
-     */
-    @BeforeEach
-    void setUp() {
-        user = new User();
-    }
     @Test
     void getId() {/*
         User getUser = (User) user.genericDao.getById(3);

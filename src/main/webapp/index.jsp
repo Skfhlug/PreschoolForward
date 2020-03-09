@@ -1,7 +1,14 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
+
 <%@include file="head.jsp"%>
 
-<div id="background1">
+
+<c:if test="${pageContext.request.isUserInRole('admin')}">
+    <a href="adminRegister.jsp">Add Admin (this link will display when admin logged in)</a>
+</c:if>
+
+<div class="background1">
     <div class = "backgroundInfo">
         <img id="logo" alt="School logo" src="img/schoolLogo.png" />
         <h1 class="nameFont1">Welcome to White Steeple Preschool</h1>

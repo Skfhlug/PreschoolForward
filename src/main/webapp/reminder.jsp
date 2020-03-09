@@ -7,8 +7,8 @@
 
 <div class="container-fluid">
     <h2>Search Results: </h2>
-    <!--${reminder}-->
 </div>
+<a href = "addReminder.jsp"><button>Add Reminder</button></a>
 <form action="reminder" method="GET">
     <div class="form-group">
         <label>What are you looking for:</label>

@@ -77,7 +77,10 @@ footer p {
     text-align: right;
 }
 
-
+.loginLink {
+    float: right;
+    margin-top: 0px;
+}
 nav {
     background-color:  #9de9fc;
     padding: 10px;
@@ -178,7 +181,7 @@ nav ul li:focus-within ul {
 #background {
     padding: 3em;
 }
-#background2, #background1 {
+.background2, .background1 {
     border: 3px solid #EEEE22;
     background-color: #ffffce;
     opacity: .8;
@@ -221,15 +224,44 @@ table.login th {
     max-width: 500px;
     margin: auto;
 }
+/***********************************
+    Sticky Footer
+    http://css-tricks.com/snippets/css/a-guide-to-flexbox
+**********************************/
+html, body {
+    height: 100%;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto; /* flex-grow, flex-shrink, flex-bais */
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+
+header {
+    margin: 2em 0;
+}
 /*************************
 Add button
 **************************/
-.add {
+.addButton {
     padding: 10px 10px 10px 10px;
     background-color: #87CEEB;
     color: darkblue;
     font-size: 20px;
     border-radius: 50px;
     float: right;
+}
+
+.descriptionInput  {
+    witdth: 400px;
+    hight: 50px;
 }

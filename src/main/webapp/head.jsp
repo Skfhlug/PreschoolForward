@@ -16,16 +16,16 @@
 
 <header>
     <nav aria-label="main menu">
+        <a href="adminLogin.jsp" class="loginLink">Log in</a>
         <ul role="menubar">
             <li role="menuitem"><a href=index.jsp>Home</a></li>
             <li role="menuitem"><a href=gallery.html>Event Gallery</a></li>
             <!--<li role="menuitem"><a href="admission.html">ADMISSION</a></li>-->
             <li role="menuitem"><a href="resources.html">Resource</a></li>
-            <li role="menuitem"><a href="#">Register <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
+            <li role="menuitem"><a href="#">Register &#x2207; <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
                 <ul>
                     <li role="menuitem"><a href="adminRegister.jsp">Admin Register</a></li>
                     <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
-                    <li role="menuitem"><a href="adminResult.jsp">AdminResult</a></li>
                     <li role="menuitem"><a href="reminder.jsp">Reminder</a></li>
                     <li role="menuitem"><a href="user.jsp">Users</a></li>
                     <li role="menuitem"><a href="student.jsp">Student(Admin only)</a></li>
@@ -33,4 +33,5 @@
             </li>
         </ul>
     </nav>
+
 </header>
