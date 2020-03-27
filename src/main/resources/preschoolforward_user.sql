@@ -1,0 +1,3 @@
+INSERT INTO preschoolforward.user (id, first_name, last_name, username, password, email, phone) VALUES (1, 'nina', 'jones', 'njones', '123456789', 'njones@somemail.com', '4443332222');
+INSERT INTO preschoolforward.user (id, first_name, last_name, username, password, email, phone) VALUES (2, 'Linda', 'Woman', 'lwoman', '222222222', 'lwoman@somemail.com', '1112223333');
+INSERT INTO preschoolforward.user (id, first_name, last_name, username, password, email, phone) VALUES (3, 'Anne', 'Brady', 'abrady', '333333333', 'abrady@somemail.com', '9993330000');

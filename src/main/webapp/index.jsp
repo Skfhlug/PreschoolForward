@@ -10,7 +10,9 @@
 
 <div class="background1">
     <div class = "backgroundInfo">
-        <img id="logo" alt="School logo" src="img/schoolLogo.png" />
+
+        <br>
+        <img id="kid4" alt="picture of kids" src="img/kid5.jpg" />
         <h1 class="nameFont1">Welcome to White Steeple Preschool</h1>
 
 

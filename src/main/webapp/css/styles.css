@@ -265,3 +265,16 @@ Add button
     witdth: 400px;
     hight: 50px;
 }
+/*******************************
+Picture
+********************************/
+#logo {
+    width: 60px;
+    height: auto;
+}
+img#kid4 {
+    width: 750px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}

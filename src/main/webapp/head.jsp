@@ -18,6 +18,7 @@
     <nav aria-label="main menu">
         <a href="welcomeAdmin.jsp" class="loginLink">Log in</a>
         <ul role="menubar">
+            <li role="menuitem"><a href=index.jsp><img id="logo" alt="School logo" src="img/schoolLogo.png" /></a></li>
             <li role="menuitem"><a href=index.jsp>Home</a></li>
             <li role="menuitem"><a href=gallery.html>Event Gallery</a></li>
             <!--<li role="menuitem"><a href="admission.html">ADMISSION</a></li>-->
