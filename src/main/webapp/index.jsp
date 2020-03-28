@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!doctype html>
+
 
 <%@include file="head.jsp"%>
 
@@ -12,7 +12,7 @@
     <div class = "backgroundInfo">
 
         <br>
-        <img id="kid4" alt="picture of kids" src="img/kid5.jpg" />
+        <img id="kid5" alt="picture of kids" src="img/kid5.jpg" />
         <h1 class="nameFont1">Welcome to White Steeple Preschool</h1>
 
 

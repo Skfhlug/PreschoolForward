@@ -50,6 +50,9 @@ public class Reminder {
         this.user = user;
     }
 
+    public Reminder(String title, String description, int userId, String status) {
+    }
+
     /**
      * Gets id.
      *

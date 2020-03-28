@@ -25,7 +25,6 @@ public class User {
 
     public User() {
     }
-
     public User(String first_name, String last_name, String username, String password, String email, String phone) {
         this.first_name = first_name;
         this.last_name = last_name;
@@ -34,6 +33,7 @@ public class User {
         this.email = email;
         this.phone = phone;
     }
+
 
     public int getId() {
         return id;
@@ -108,7 +108,7 @@ public class User {
     public void removeOrder(Reminder reminder) {
         orders.remove(reminder);
         reminder.setUser(null);
-    }
+    }/*
     @Override
     public String toString() {
         return "User{" +
@@ -120,5 +120,5 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
-    }
+    }*/
 }

@@ -12,22 +12,26 @@
     <title>Add Reminder</title>
 </head>
 <body>
+<div class="container-fluid">
 <div class="background1">
 <h1>Add Reminder</h1>
-
-<form action="#" method="post">
-
-    <label>Title:</label>
-    <input type="text" name="reminder_title" class="form-control" placeholder="Title"/><br />
-
-    <label>Description:</label>
-    <input type="text" name="description" id="descriptionInput" class="form-control" placeholder="description"/><br />
-
-    <label>Status:</label>
-    <input type="text" name="username" class="form-control" /><br />
-
-    <input type="submit" name="" value="Add New Admin" />
-</form>
+        <form action="addReminderServlet" method="POST">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" placeholder="Title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" class="form-control" id="description" placeholder="Describe you reminder here" name="description">
+            </div>
+            <div class="form-group">
+                <label>Display Status</label><br>
+                <label><input type="radio" name="displayStatus" value="display">Display now</label><br>
+                <label><input type="radio" name="displayStatus" value="none" checked>Not display</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>

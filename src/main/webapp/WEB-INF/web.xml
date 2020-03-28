@@ -7,15 +7,15 @@
         <login-config>
             <auth-method>FORM</auth-method>
             <form-login-config>
-                <form-login-page>/adminLogin.jsp</form-login-page>
-                <form-error-page>/loginError.jsp</form-error-page>
+                <form-login-page>//adminLogin.jsp</form-login-page>
+                <form-error-page>//loginError.jsp</form-error-page>
             </form-login-config>
         </login-config>
         <!-- Protect the user search page. -->
         <security-constraint>
             <web-resource-collection>
                 <web-resource-name>search</web-resource-name>
-                <url-pattern>/studentRegister.jsp</url-pattern>
+                <url-pattern>/adminRegister.jsp</url-pattern>
             </web-resource-collection>
             <auth-constraint>
                 <role-name>admin</role-name>

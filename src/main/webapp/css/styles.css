@@ -84,7 +84,7 @@ footer p {
 nav {
     background-color:  #9de9fc;
     padding: 10px;
-    padding-top: 20px;
+    padding-top: 40px;
     margin-bottom: 30px;
     border-radius: 0px 0px 5px 5px;
     margin-left: 0;
@@ -246,9 +246,6 @@ footer {
 }
 
 
-header {
-    margin: 2em 0;
-}
 /*************************
 Add button
 **************************/
@@ -266,15 +263,18 @@ Add button
     hight: 50px;
 }
 /*******************************
-Picture
+Pictures
 ********************************/
 #logo {
-    width: 60px;
+    width: 10%;
     height: auto;
+    float: left;
 }
-img#kid4 {
+background1 backgroundInfo img#kid5 {
     width: 750px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    align-items: center;
 }

@@ -1,56 +1,64 @@
-<!doctype html>
+<!doctype>
 <html lang="en">
 <%@include file="head.jsp"%>
-<body>
-<a class="skipLink" href="#mainContent">Skip to Main Content</a>
-<a class="skipLink" href="#footer">Skip to Footer</a>
-
-<header>
-    <nav aria-label="main menu">
-        <ul role="menubar">
-            <li role="menuitem"><a href=index.jsp>Home</a></li>
-            <li role="menuitem"><a href=gallery.html>Event Gallery</a></li>
-            <li role="menuitem"><a href="resources.html">Resource</a></li>
-            <li role="menuitem"><a href="#">Register <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
-                <ul>
-                    <li role="menuitem"><a href="adminRegister.jsp">Admin Register</a></li>
-                    <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
-                    <li role="menuitem"><a href="adminResult.jsp">AdminResult</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
 
 
 <div id="background1">
     <div class = "backgroundInfo">
-        <img id="logo" alt="School logo" src="img/schoolLogo.png" />
+
         <h1 class="nameFont1">Student Register</h1>
+        <div class="formDesign">
+        <form action="addStudentServlet" method="post">
 
-
-        <form action="#" method="post">
-            <div>
-
+            <div class="form-group">
                 <label>First Name:</label>
-                <input type="text" name="first_name" class="form-control" placeholder="First Name"/><br />
-
+                <input type="text" name="first_name" class="form-control" placeholder="First Name"/>
+            </div>
+            <div class="form-group">
+                <label>Middle Name:</label>
+                <input type="text" name="middle_name" class="form-control" placeholder="Middle Name"/>
+            </div>
+            <div class="form-group">
                 <label>Last Name:</label>
-                <input type="text" name="last_name" class="form-control" placeholder="Last Name"/><br />
-
-                <label>Social Security Number:</label>
-                <input type="text" name="ssn" class="form-control" placeholder="000-00-0000"/><br />
-
-                <label>Room Number:</label>
-                <input type="text" name="room" class="form-control" placeholder="000"/><br />
-
-                <label>Phone:</label>
-                <input type="text" name="phone" class="form-control" placeholder="000-0000"/><br />
+                <input type="text" name="last_name" class="form-control" placeholder="Last Name"/>
+            </div>
+            <div class="form-group">
+                <label>Address:</label>
+                <input type="text" name="address" class="form-control" placeholder="address"/>
+            </div>
+            <div class="form-group">
+                <label>Date of birth:</label>
+                <input type="text" name="date_of_birth" class="form-control" placeholder="000-0000"/>
+            </div>
+            <div class="form-group">
+                <label>Class:</label>
+                <input type="text" name="class" class="form-control" placeholder="class"/>
+            </div>
+            <div class="form-group">
+                <label>Grade:</label>
+                <input type="text" name="grade" class="form-control" placeholder="grade"/>
+            </div>
+            <div class="form-group">
+                <label>Emergency Phone Number1 :</label>
+                <input type="text" name="emergency_phone1" class="form-control" placeholder="0000000000"/>
+            </div>
+            <div class="form-group">
+                <label>Emergency Phone Number2:</label>
+                <input type="text" name="emergency_phone2" class="form-control" placeholder="0000000000"/>
+            </div>
+            <div class="form-group">
+                <label>Picture Address:</label>
+                <input type="text" name="picture_address" class="form-control" placeholder="xxxx.png"/>
+            </div>
+            <div class="form-group">
+                    <label>marital Status </label><br>
+                    <label><input type="radio" name="parent_status" value="Married" checked>Married</label>
+                    <label><input type="radio" name="parent_status" value="Separated" >Separated</label>
             </div>
 
             <input type="submit" name="" value="Add New Employee" />
         </form>
-
+        </div>
     </div>
 </div>
 
