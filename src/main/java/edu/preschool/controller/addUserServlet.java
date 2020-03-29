@@ -1,8 +1,11 @@
 package edu.preschool.controller;
 
 
+import edu.preschool.entity.Role;
 import edu.preschool.entity.User;
 import edu.preschool.persitence.GenericDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,25 +21,33 @@ import java.nio.file.Files;
         urlPatterns = { "/addUserServlet" }
 )
 public class addUserServlet extends HttpServlet {
-
+    private final Logger logger = LogManager.getLogger(this.getClass());
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String firstName = request.getParameter("first_name");
-        String lastName = request.getParameter("last_name");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
+        User user = new User();
+        user.setId(1);
+        user.setFirst_name(request.getParameter("first_name"));
+        user.setLast_name(request.getParameter("last_name"));
+        user.setUsername(request.getParameter("username"));
+        user.setPassword(request.getParameter("password"));
+        user.setEmail(request.getParameter("email"));
+        user.setPhone(request.getParameter("phone"));
+
+
 
         GenericDao genericDao = new GenericDao(User.class);
-        //User user = new User(0, firstName, lastName, username, password, email, phone);
+        int id = genericDao.insert(user);;
+
+
+
         String successMessage;
-        //genericDao.insert(user);
+
         successMessage = "User added.";
         request.setAttribute("message", successMessage);
+        logger.info("Added user");
 
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("searchUser?searchTerm=&submit=viewAll");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/student.jsp");
         dispatcher.forward(request, response);
     }
 }

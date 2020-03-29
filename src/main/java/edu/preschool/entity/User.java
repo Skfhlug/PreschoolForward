@@ -23,6 +23,10 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Reminder> orders = new HashSet<>();
 
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Role> roles = new HashSet<Role>();
+
+
     public User() {
     }
     public User(String first_name, String last_name, String username, String password, String email, String phone) {
@@ -98,6 +102,11 @@ public class User {
     public void setOrders(Set<Reminder> orders) {
         this.orders = orders;
     }
+
+    public void addRole(Role role) {
+        roles.add(role);
+    }
+
 
     public void addReminder(Reminder reminder) {
         orders.add(reminder);

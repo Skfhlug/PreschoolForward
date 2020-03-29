@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label>Date of birth:</label>
-                <input type="text" name="date_of_birth" class="form-control" placeholder="000-0000"/>
+                <input type="text" name="date_of_birth" class="form-control" placeholder="YYYY-MM-DD"/>
             </div>
             <div class="form-group">
                 <label>Class:</label>
