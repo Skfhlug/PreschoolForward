@@ -1,4 +1,0 @@
-INSERT INTO preschoolforward.reminder (id, reminder_title, description, user_id, status) VALUES (1, 'firstReminder', 'Somethings in the first reminder', 1, 'display');
-INSERT INTO preschoolforward.reminder (id, reminder_title, description, user_id, status) VALUES (2, 'secondReminder', 'Somethings in the Second reminder', 1, 'none');
-INSERT INTO preschoolforward.reminder (id, reminder_title, description, user_id, status) VALUES (3, 'thirdReminder', 'Somethings in the third reminder', 2, 'none');
-INSERT INTO preschoolforward.reminder (id, reminder_title, description, user_id, status) VALUES (4, 'fourReminder', 'Somethinds in the fourth reminder', 3, 'none');

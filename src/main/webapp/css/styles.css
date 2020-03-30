@@ -47,6 +47,12 @@ main {
 form {
     width: 800px;
 }
+.displayHalfForm {
+    width: 50%;
+}
+.radio {
+    margin-right: 10px;
+}
 /*********************
 Footer
 *********************/
@@ -211,11 +217,12 @@ table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #9de9fc;
+    color: black;
 }
 
 table.login th {
+    width: 200px;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -245,18 +252,31 @@ footer {
     flex-shrink: 0;
 }
 
-
+/*****************
+******************/
+h2 {
+    float: left;
+}
 /*************************
 Add button
 **************************/
 .addButton {
-    padding: 10px 10px 10px 10px;
-    background-color: #87CEEB;
-    color: darkblue;
-    font-size: 20px;
-    border-radius: 50px;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: right;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #7272f2;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    width: 50px;
     float: right;
 }
+.button:hover {background-color: #9a9af2}
 
 .descriptionInput  {
     witdth: 400px;
@@ -269,6 +289,7 @@ Pictures
     width: 10%;
     height: auto;
     float: left;
+    margin: 0 0 0 0;
 }
 background1 backgroundInfo img#kid5 {
     width: 750px;

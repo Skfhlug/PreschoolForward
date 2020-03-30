@@ -25,5 +25,6 @@
         <mapping class="edu.preschool.entity.Reminder"/>
         <mapping class="edu.preschool.entity.User"/>
         <mapping class="edu.preschool.entity.Role"/>
+        <mapping class="edu.preschool.entity.Student"/>
     </session-factory>
 </hibernate-configuration>

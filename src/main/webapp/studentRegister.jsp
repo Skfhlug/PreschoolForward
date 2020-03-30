@@ -12,15 +12,20 @@
 
             <div class="form-group">
                 <label>First Name:</label>
-                <input type="text" name="first_name" class="form-control" placeholder="First Name"/>
+                <input type="text" name="first_name" class="form-control displayHalfForm" placeholder="First Name"/>
             </div>
             <div class="form-group">
                 <label>Middle Name:</label>
-                <input type="text" name="middle_name" class="form-control" placeholder="Middle Name"/>
+                <input type="text" name="middle_name" class="form-control displayHalfForm" placeholder="Middle Name"/>
             </div>
             <div class="form-group">
                 <label>Last Name:</label>
                 <input type="text" name="last_name" class="form-control" placeholder="Last Name"/>
+            </div>
+            <div class="form-group">
+                <label>Gender</label><br>
+                <label><input type="radio" class="radio" name="gender" value="male">Male  </label>
+                <label><input type="radio" class="radio" name="gender" value="female" checked>Female </label>
             </div>
             <div class="form-group">
                 <label>Address:</label>
@@ -32,11 +37,12 @@
             </div>
             <div class="form-group">
                 <label>Class:</label>
-                <input type="text" name="class" class="form-control" placeholder="class"/>
+                <input type="text" name="class_room" class="form-control" placeholder="class room"/>
             </div>
             <div class="form-group">
-                <label>Grade:</label>
-                <input type="text" name="grade" class="form-control" placeholder="grade"/>
+                <label>Grade  </label><br>
+                <label><input type="radio" class="radio" name="grade" value="junior" checked>Junior  </label>
+                <label><input type="radio" class="radio" name="grade" value="senior" >Senior  </label>
             </div>
             <div class="form-group">
                 <label>Emergency Phone Number1 :</label>
@@ -52,8 +58,8 @@
             </div>
             <div class="form-group">
                     <label>marital Status </label><br>
-                    <label><input type="radio" name="parent_status" value="Married" checked>Married</label>
-                    <label><input type="radio" name="parent_status" value="Separated" >Separated</label>
+                    <label><input type="radio" class="radio" name="parent_status" value="Married" checked>Married  </label>
+                    <label><input type="radio" class="radio" name="parent_status" value="Separated" >Separated  </label>
             </div>
 
             <input type="submit" name="" value="Add New Employee" />

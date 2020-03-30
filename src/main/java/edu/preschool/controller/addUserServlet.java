@@ -47,7 +47,7 @@ public class addUserServlet extends HttpServlet {
         logger.info("Added user");
 
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/student.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/user.jsp");
         dispatcher.forward(request, response);
     }
 }

@@ -5,11 +5,9 @@
 
 <html><body>
 
+<h2>Search User Results: </h2>
 
-<div class="container-fluid">
-    <h2>Search User Results: </h2>
-</div>
-<a class="addButton" href="addUser.jsp"><button>Add User</button></a>
+<a href="addUser.jsp"><button>Add User</button></a>
 <form action="searchUser" method="GET">
     <div class="form-group">
         <label>What are you looking for:</label>

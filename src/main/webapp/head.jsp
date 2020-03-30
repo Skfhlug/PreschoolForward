@@ -23,7 +23,6 @@
         <ul role="menubar">
             <li role="menuitem"><a href=index.jsp>Home</a></li>
             <li role="menuitem"><a href=gallery.html>Event Gallery</a></li>
-            <!--<li role="menuitem"><a href="admission.html">ADMISSION</a></li>-->
             <li role="menuitem"><a href="resources.html">Resource</a></li>
             <li role="menuitem"><a href="#">Register <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
                 <ul>

@@ -9,7 +9,7 @@
 <%@include file="head.jsp"%>
 <body>
 
-    <h1 class="nameFont1">Student Register</h1>
+    <h1 class="nameFont1">User Register</h1>
     <div class="formDesign">
         <form action="addUserServlet" method="post">
 
