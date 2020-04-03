@@ -38,14 +38,6 @@
                 <label>Phone :</label>
                 <input type="text" name="phone" class="form-control" placeholder="0000000000"/>
             </div>
-            <div class="form-group">
-                <label >Choose User Role:</label>
-                <select  name="role">
-                    <option value="admin">Admin</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="parent">parent</option>
-                </select>
-            </div>
 
             <input type="submit" name="" value="Add New User" />
         </form>

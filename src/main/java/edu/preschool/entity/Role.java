@@ -88,7 +88,14 @@ public class Role {
         this.username = username;
     }
 
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+/*
 
     @Override
     public String toString() {
@@ -97,7 +104,7 @@ public class Role {
                 ", role_name='" + role_name + '\'' +
                 ", username='" + username + '\'' +
                 '}';
-    }
+    }*/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

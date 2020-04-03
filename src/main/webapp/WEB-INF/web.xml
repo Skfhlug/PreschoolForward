@@ -7,8 +7,8 @@
         <login-config>
             <auth-method>FORM</auth-method>
             <form-login-config>
-                <form-login-page>//adminLogin.jsp</form-login-page>
-                <form-error-page>//loginError.jsp</form-error-page>
+                <form-login-page>/adminLogin.jsp</form-login-page>
+                <form-error-page>/loginError.jsp</form-error-page>
             </form-login-config>
         </login-config>
         <!-- Protect the user search page. -->

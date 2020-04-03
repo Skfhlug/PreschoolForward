@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.nio.file.Files;
 
@@ -39,15 +40,24 @@ public class addUserServlet extends HttpServlet {
         int id = genericDao.insert(user);;
 
 
+        HttpSession session = request.getSession();
+        session.setAttribute("added_id",id);
+        session.setAttribute("added_username", request.getParameter("username"));
 
         String successMessage;
+        String userAddedDetail = "New user was added"
+                                + "\nID : " + id
+                                + "\nFirst Name: " + request.getParameter("first_name")
+                                + "\nLast Name: " + request.getParameter("last_name");
 
         successMessage = "User added.";
         request.setAttribute("message", successMessage);
+        session.setAttribute("sessionAdd", userAddedDetail);
         logger.info("Added user");
 
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/user.jsp");
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/addRole.jsp");
         dispatcher.forward(request, response);
     }
 }
