@@ -35,6 +35,7 @@ public class addReminderServlet extends HttpServlet {
         GenericDao genericDao = new GenericDao(Reminder.class);
         Reminder reminder = new Reminder(title, description, userId, status);
 
+
         int successMessages;
         successMessages = genericDao.insert(reminder);
 

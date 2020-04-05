@@ -14,7 +14,6 @@
 
 <c:if test="${sessionAdd != null}" >
     <p class="addStatus">${sessionAdd}</p>
-    <p class="addStatus">${sessionAdd}</p>
     <c:set var="sessionAddd"  scope="session" />
     <c:remove var="sessionAdd"/>
 </c:if>

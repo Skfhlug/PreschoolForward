@@ -1,7 +1,6 @@
 package edu.preschool.controller;
 
 
-import edu.preschool.entity.Role;
 import edu.preschool.entity.User;
 import edu.preschool.persitence.GenericDao;
 import org.apache.logging.log4j.LogManager;

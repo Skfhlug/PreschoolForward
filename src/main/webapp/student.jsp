@@ -19,7 +19,7 @@
 <form action="searchStudent" method="GET">
     <div class="form-group">
         <label>What are you looking for:</label>
-        <input type="text" name="searchTerm" class="form-control" placeholder="last name"/>
+        <input type="text" name="searchTerm" class="form-control" placeholder="Enter Searching key here"/>
     </div>
     <div class="form-group">
         <label>Type:</label>
@@ -30,7 +30,7 @@
         <input type="radio" name="searchType" value="class_room" > Class
 
     </div>
-    <input type="submit" name="" value="Search" />
+    <input type="submit" name="" value="Search" /><button type="submit" name="submit" value="viewAll">View All</button>
 </form>
 
     <h2>All Student</h2>

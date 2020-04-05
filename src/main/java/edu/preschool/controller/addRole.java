@@ -26,15 +26,19 @@ public class addRole  extends HttpServlet{
         GenericDao genericDao = new GenericDao(Role.class);
         HttpSession session = request.getSession();
 
-        //Integer user_id = (Integer) session.getAttribute("added_id");
-        User user;
-        User user_id = (User) session.getAttribute("added_id");
+
+        //User user_id = (User) session.getAttribute("added_id");
+        Integer user_id = (Integer) session.getAttribute("added_id");
         String added_username = (String) session.getAttribute("added_username");
-        String new_user_id = (String) session.getAttribute("added_id");
-        //System.out.println(user_id);
+        GenericDao userDao = new GenericDao(User.class);
+        User user = (User) userDao.getByPropertyLike("username", added_username).get(0);
+        System.out.println("id =" + user_id);
+        System.out.println(user);
+
         role.setUsername(added_username);
         role.setRole_name(request.getParameter("role"));
-
+        role.setUser(user);
+        System.out.println(user_id);
 
 
         int id = genericDao.insert(role);

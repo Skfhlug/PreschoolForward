@@ -23,7 +23,7 @@ public class SearchStudent extends HttpServlet {
 
         GenericDao genericDao = new GenericDao(Student.class);
 
-        if (searchTerm.length()>0) {
+        if (searchTerm.length()>0 || req.getParameter("submit").equals("search")) {
             req.setAttribute("resultList", genericDao.getByPropertyLike(searchType, searchTerm));
         } else {
             req.setAttribute("students", genericDao.getAll());

@@ -12,7 +12,7 @@
 <form action="reminder" method="GET">
     <div class="form-group">
         <label>What are you looking for:</label>
-        <input type="text" name="searchTerm" class="form-control" placeholder="Word"/><br />
+        <input type="text" name="searchTerm" class="form-control" placeholder="Enter Searching key here"/><br />
     </div>
     <div class="form-group">
         <label>Type:</label>
