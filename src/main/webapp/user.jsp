@@ -37,6 +37,7 @@
             <th>Username</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>Edit</th>
         </tr>
         <c:forEach var="user" items="${users}">
             <tr>
@@ -46,7 +47,7 @@
                 <td>${user.username}</td>
                 <td>${user.email}</td>
                 <td>${user.phone}</td>
-
+                <td><a href="editUser.jsp"></a>${user.phone}</td>
             </tr>
         </c:forEach>
         <c:forEach var="foundList" items="${resultList}">

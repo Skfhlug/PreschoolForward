@@ -18,8 +18,12 @@ public class LoginAction extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("The logged in user: " + req.getRemoteUser() + " has a role of admin: " + req.isUserInRole("admin"));
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+        //logger.info("The logged in user: " + req.getRemoteUser() + " has a role of admin: " + req.isUserInRole("admin"));
+
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/welcomeAdmin.jsp");
         dispatcher.forward(req, resp);
+        //resp.sendRedirect("/welcomeAdmin.jsp");
     }
+
 }
