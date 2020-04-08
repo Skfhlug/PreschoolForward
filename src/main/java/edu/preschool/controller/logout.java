@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * The type Logout.
- * @author Jeanne
+ * @author Suparin
  * @version  1.0
  * @since 2020-03-02
  */
