@@ -1,7 +1,7 @@
 <!doctype>
 <html lang="en">
 <%@include file="head.jsp"%>
-
+<%@include file="header.jsp"%>
 
 <div id="background1">
     <div class = "backgroundInfo">
@@ -80,5 +80,7 @@
             <p>&copy; White Steeple School, 5849 N Nina Ave, Chicago, IL 60631</p>
         </div>
     </footer>
+
 </body>
+<%@include file="footer.jsp"%>
 </html>

@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="head.jsp"%>
+<%@include file="header.jsp"%>
 <body>
 
     <h1 class="nameFont1">User Register</h1>
@@ -42,5 +43,7 @@
             <input type="submit" name="" value="Add New User" />
         </form>
     </div>
+
 </body>
+<%@include file="footer.jsp"%>
 </html>

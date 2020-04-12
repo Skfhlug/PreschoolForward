@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="head.jsp"%>
+<%@include file="header.jsp"%>
 <body>
 
 <h1 class="nameFont1">Add role</h1>
@@ -34,5 +35,7 @@
         <input type="submit" name="" value="Add New User" />
     </form>
 </div>
+
 </body>
+<%@include file="footer.jsp"%>
 </html>

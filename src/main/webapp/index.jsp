@@ -2,10 +2,13 @@
 
 
 <%@include file="head.jsp"%>
-
+<%@include file="header.jsp"%>
 
 <c:if test="${pageContext.request.isUserInRole('admin')}">
-    <a href="adminRegister.jsp">Add Admin (this link will display when admin logged in)</a>
+    <a href = "addReminder.jsp"><button>Add Reminder</button></a>
+    <a href = "reminder.jsp"><button>Reminder</button></a>
+    <a href = "user.jsp"><button>User</button></a>
+    <p>Welcome : ${active_username}</p>
 </c:if>
 
 <div class="background1">

@@ -11,30 +11,3 @@
 
     <link rel="stylesheet" href="css/styles.css"/>
 </head>
-
-<body>
-<a class="skipLink" href="#mainContent">Skip to Main Content</a>
-<a class="skipLink" href="#footer">Skip to Footer</a>
-
-<header>
-    <nav aria-label="main menu">
-        <a href="logout.jsp" class="loginLink">  |  Logout</a>
-        <a href="welcomeAdmin.jsp" class="loginLink">Log in</a>
-
-        <a href=index.jsp><img id="logo" alt="School logo" src="img/schoolLogo.png" /></a>
-        <ul role="menubar">
-            <li role="menuitem"><a href=index.jsp>Home</a></li>
-            <li role="menuitem"><a href=gallery.html>Event Gallery</a></li>
-            <li role="menuitem"><a href="resources.html">Resource</a></li>
-            <li role="menuitem"><a href="#">Register <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
-                <ul>
-                    <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
-                    <li role="menuitem"><a href="reminder.jsp">Reminder</a></li>
-                    <li role="menuitem"><a href="user.jsp">Users</a></li>
-                    <li role="menuitem"><a href="student.jsp">Student</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
-</header>

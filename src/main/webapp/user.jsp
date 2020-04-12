@@ -1,12 +1,13 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<%@include file="head.jsp"%>
 
+<%@include file="head.jsp"%>
+<%@include file="header.jsp"%>
 <html><body>
 
 <h2>Search User Results: </h2>
-
+<p>Admin: ${user}</p>
 <a href="addUser.jsp"><button>Add User</button></a>
 <form action="searchUser" method="GET">
     <div class="form-group">
@@ -47,7 +48,7 @@
                 <td>${user.username}</td>
                 <td>${user.email}</td>
                 <td>${user.phone}</td>
-                <td><a href="editUser.jsp"></a>${user.phone}</td>
+                <td><a  href="editUserServlet?editID=${user.id}">edit</a></td>
             </tr>
         </c:forEach>
         <c:forEach var="foundList" items="${resultList}">
@@ -58,10 +59,12 @@
                 <td>${foundList.username}</td>
                 <td>${foundList.email}</td>
                 <td>${foundList.phone}</td>
+                <td><a href="editUserServlet?editID=${user.id}">edit</a></td>
             </tr>
         </c:forEach>
 
     </table>
 
 </body>
+<%@include file="footer.jsp"%>
 </html>

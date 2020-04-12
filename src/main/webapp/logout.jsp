@@ -10,11 +10,14 @@
 <head>
     <title>Title</title>
 </head>
+<%@include file="header.jsp"%>
+<%@include file="header.jsp"%>
 <body>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     session.invalidate();
-    response.sendRedirect("/logout");
+    response.sendRedirect("/index.jsp");
 %>
+<%@include file="footer.jsp"%>
 </body>
 </html>

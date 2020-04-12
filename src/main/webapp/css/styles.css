@@ -22,11 +22,15 @@ footer {
     height: 120px;
     line-height: 1.6;
     flex-shrink: 0;
+    bottom: 0;
+    width: 800px;
+    float: bottom;
+    position: absolute;
 }
 
 body {
     font-size: 100%;
-    margin: auto;
+    margin: auto auto 100px;
     width: 1000px;
     padding: 0;
     background-attachment: fixed;

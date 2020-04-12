@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="head.jsp"%>
+<%@include file="header.jsp"%>
 <head>
     <title>Admin Login</title>
 </head>
@@ -19,5 +20,7 @@
         <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
     </TABLE>
 </FORM>
+
 </body>
+<%@include file="footer.jsp"%>
 </html>

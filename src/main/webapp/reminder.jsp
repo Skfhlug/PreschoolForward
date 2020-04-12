@@ -2,7 +2,7 @@
 
 
 <%@include file="head.jsp"%>
-
+<%@include file="header.jsp"%>
 <html><body>
 
 <div class="container-fluid">
@@ -58,4 +58,5 @@
     </table>
 
 </body>
+<%@include file="footer.jsp"%>
 </html>
