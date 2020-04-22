@@ -12,7 +12,7 @@
 <form action="reminder" method="GET">
     <div class="form-group">
         <label>What are you looking for:</label>
-        <input type="text" name="searchTerm" class="form-control" placeholder="Enter Searching key here"/><br />
+        <input type="text" name="searchTerm" class="form-control" placeholder="Enter Searching key here" /><br />
     </div>
     <div class="form-group">
         <label>Type:</label>
@@ -21,7 +21,7 @@
         <input type="radio" name="searchType" value="description" > Description
         <input type="radio" name="searchType" value="admin"> admin Id
     </div>
-    <input type="submit" name="" value="Search" />
+    <input type="submit" name="" value="Search" /><button type="submit" name="submit" value="viewAll">View All</button>
 </form>
 <p>-------------------------------------------------------------------------------------------</p>
 

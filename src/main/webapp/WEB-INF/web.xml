@@ -15,7 +15,6 @@
         <security-constraint>
             <web-resource-collection>
                 <web-resource-name>search</web-resource-name>
-
                 <url-pattern>/adminRegister.jsp</url-pattern>
                 <url-pattern>/welcomeAdmin.jsp</url-pattern>
                 <url-pattern>/user.jsp</url-pattern>
@@ -27,10 +26,24 @@
                 <role-name>admin</role-name>
             </auth-constraint>
         </security-constraint>
-
-
+<!--
+        <security-constraint>
+            <web-resource-collection>
+               <url-pattern>/welcomeAdmin.jsp</url-pattern>
+            </web-resource-collection>
+            <auth-constraint>
+                <role-name>teacher</role-name>
+            </auth-constraint>
+        </security-constraint>
+-->
     <security-role>
         <role-name>admin</role-name>
+    </security-role>
+    <security-role>
+        <role-name>teacher</role-name>
+    </security-role>
+    <security-role>
+        <role-name>parent</role-name>
     </security-role>
 
 </web-app>

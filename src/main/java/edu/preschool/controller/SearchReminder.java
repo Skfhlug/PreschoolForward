@@ -30,7 +30,7 @@ public class SearchReminder extends HttpServlet  {
 
         GenericDao genericDao = new GenericDao(Reminder.class);
 
-        if (searchTerm.length()>0) {
+        if (searchTerm.length()>0 || req.getParameter("submit").equals("Search")) {
             req.setAttribute("resultList", genericDao.getByPropertyLike(searchType, searchTerm));
         } else {
             req.setAttribute("reminders", genericDao.getAll());

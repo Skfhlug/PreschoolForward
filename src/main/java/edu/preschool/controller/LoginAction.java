@@ -23,7 +23,7 @@ public class LoginAction extends HttpServlet {
         System.out.println("The logged in user: " + req.getRemoteUser() + " has a role of admin: " + req.isUserInRole("admin"));
 
         String active_username = req.getRemoteUser();
-        //req.setAttribute("user", active_username);
+
         HttpSession session  = req.getSession();
         session.setAttribute("active_user", active_username);
 

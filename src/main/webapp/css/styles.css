@@ -22,10 +22,6 @@ footer {
     height: 120px;
     line-height: 1.6;
     flex-shrink: 0;
-    bottom: 0;
-    width: 800px;
-    float: bottom;
-    position: absolute;
 }
 
 body {

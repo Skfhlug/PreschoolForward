@@ -24,6 +24,7 @@
                     <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
                     <li role="menuitem"><a href="reminder.jsp">Reminder</a></li>
                     <li role="menuitem"><a href="user.jsp">Users</a></li>
+                    <li role="menuitem"><a href="parent.jsp">Parent</a></li>
                     <li role="menuitem"><a href="student.jsp">Student</a></li>
                 </ul>
             </li>

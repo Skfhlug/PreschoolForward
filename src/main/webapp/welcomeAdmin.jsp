@@ -48,5 +48,6 @@
                 Building self-discipline, self-esteem and social manners
                 A well-rounded program with an affordable tuition fee</p>
         </div>
-    <%@include file="footer.jsp"%></body>
+    <%@include file="footer.jsp"%>
+</body>
 </html>

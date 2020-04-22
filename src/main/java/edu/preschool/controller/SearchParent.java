@@ -1,6 +1,5 @@
 package edu.preschool.controller;
-import edu.preschool.entity.Student;
-import edu.preschool.entity.User;
+import edu.preschool.entity.Parent;
 import edu.preschool.persitence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -10,26 +9,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+
 @WebServlet(
-        name = "searchStudent",
-        urlPatterns = { "/searchStudent" }
+        name = "searchParent",
+        urlPatterns = { "/searchParent" }
 )
-public class SearchStudent extends HttpServlet {
+public class SearchParent extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String searchTerm = req.getParameter("searchTerm" );
         String searchType = req.getParameter("searchType" );
 
-        GenericDao genericDao = new GenericDao(Student.class);
+        GenericDao genericDao = new GenericDao(Parent.class);
 
-        if (searchTerm.length()>0 || req.getParameter("submit").equals("search")) {
+        if (searchTerm.length()>0 || req.getParameter("submit").equals("Search")) {
             req.setAttribute("resultList", genericDao.getByPropertyLike(searchType, searchTerm));
         } else {
-            req.setAttribute("students", genericDao.getAll());
+            req.setAttribute("parents", genericDao.getAll());
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/student.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/parent.jsp");
         dispatcher.forward(req, resp);
     }
 }
+

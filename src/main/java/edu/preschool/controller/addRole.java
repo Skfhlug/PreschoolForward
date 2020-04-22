@@ -38,10 +38,19 @@ public class addRole  extends HttpServlet{
         role.setUsername(user);
         System.out.println(username);
 
+        String role_name = request.getParameter("role");
 
         int id = genericDao.insert(role);
         session.setAttribute("sessionAdd", "Added User Successful");
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/addRole.jsp");
-        dispatcher.forward(request, response);
+        request.setAttribute("resultList", userDao.getByPropertyLike("username", username));
+
+        if(role_name == "parent") {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/addParent");
+            dispatcher.forward(request, response);
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/addUserSuccess.jsp");
+            dispatcher.forward(request, response);
+        }
+
     }
 }
