@@ -19,11 +19,51 @@ import java.io.IOException;
 )
 public class editUserServlet extends HttpServlet {
     private GenericDao genericDao;
+    private GenericDao userDao;
     @Override
     public void init() throws ServletException {
         genericDao = new GenericDao(User.class);
 
     }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        userDao = new GenericDao(User.class);
+        String user_name = request.getParameter("username");
+        User user = (User) userDao.getByPropertyLike("username", user_name);
+
+
+        user.setId(Integer.valueOf(request.getParameter("id")));
+        user.setUsername(request.getParameter("username").trim());
+        user.setFirst_name(request.getParameter("first_name").trim());
+        user.setLast_name(request.getParameter("last_name").trim());
+        user.setPassword(request.getParameter("password").trim());
+        user.setEmail(request.getParameter("email").trim());
+        user.setPhone(request.getParameter("phone").trim());
+        System.out.println("Id : " + Integer.valueOf(request.getParameter("id").trim()));
+        System.out.println("username : " + request.getParameter("username"));
+        System.out.println("first_name : " + request.getParameter("first_name").trim());
+        System.out.println("last_name : " + request.getParameter("last_name").trim());
+        System.out.println("email : " + request.getParameter("email").trim());
+        System.out.println("phone : " + request.getParameter("phone").trim());
+
+        /*User user = new User(Integer.valueOf(request.getParameter("id")),
+                request.getParameter("first_name"),
+                request.getParameter("last_name"),
+                request.getParameter("username"),
+                request.getParameter("password"),
+                request.getParameter("email"),
+                request.getParameter("phone"));
+            genericDao.saveOrUpdate(user);*/
+
+
+        userDao.saveOrUpdate(user);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/searchUser?searchTerm=&searchType=id&submit=viewAll");
+        dispatcher.forward(request, response);
+    }
+
+
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,52 +76,6 @@ public class editUserServlet extends HttpServlet {
         request.setAttribute("user", genericDao.getById(Integer.valueOf(request.getParameter("editID"))));
         String url = "/editUser.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
-    }
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        //User user = new User();
-        int user_id = Integer.valueOf(request.getParameter("id"));
-        User user = (User) genericDao.getById(user_id);
-
-
-        user.setId(Integer.valueOf(request.getParameter("id")));
-        user.setUsername(request.getParameter("username"));
-        user.setFirst_name(request.getParameter("first_name"));
-        user.setLast_name(request.getParameter("last_name"));
-        user.setPassword(request.getParameter("password"));
-        user.setEmail(request.getParameter("email"));
-        user.setPhone(request.getParameter("phone"));
-        System.out.println("Id : " + Integer.valueOf(request.getParameter("id")));
-        System.out.println("username : " + request.getParameter("username"));
-        System.out.println("first_name : " + request.getParameter("first_name"));
-        System.out.println("last_name : " + request.getParameter("last_name"));
-        System.out.println("email : " + request.getParameter("email"));
-        System.out.println("phone : " + request.getParameter("phone"));
-
-
-
-        //GenericDao genericDao = new GenericDao(User.class);
-        genericDao.saveOrUpdate(user);;
-
-
-        HttpSession session = request.getSession();
-        session.setAttribute("added_username", request.getParameter("username"));
-
-        String successMessage;
-        String userAddedDetail = "New user was changed"
-                + "\nFirst Name: " + request.getParameter("first_name")
-                + "\nLast Name: " + request.getParameter("last_name");
-
-        successMessage = "User changed.";
-        request.setAttribute("message", successMessage);
-        session.setAttribute("sessionAdd", userAddedDetail);
-
-
-
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/addRole.jsp");
         dispatcher.forward(request, response);
     }
 }

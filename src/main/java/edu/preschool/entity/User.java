@@ -39,6 +39,9 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
+    public User(Integer id, String first_name, String last_name, String username, String password, String email, String phone) {
+    }
+
 
     public int getId() {
         return id;

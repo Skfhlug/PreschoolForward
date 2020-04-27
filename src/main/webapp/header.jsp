@@ -22,10 +22,12 @@
             <li role="menuitem"><a href="#">Register <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
                 <ul>
                     <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
-                    <li role="menuitem"><a href="reminder.jsp">Reminder</a></li>
-                    <li role="menuitem"><a href="user.jsp">Users</a></li>
-                    <li role="menuitem"><a href="parent.jsp">Parent</a></li>
-                    <li role="menuitem"><a href="student.jsp">Student</a></li>
+                    <li role="menuitem"><a href="reminder?searchTerm=&searchType=id&submit=viewAll">Reminder</a></li>
+                    <li role="menuitem"><a href="searchUser?searchTerm=&searchType=id&submit=viewAll">Users</a></li>
+                    <li role="menuitem"><a href="searchParent?searchTerm=&searchType=id&submit=viewAll">Parent</a></li>
+                    <li role="menuitem"><a href="searchStudent?searchTerm=&searchType=id&submit=viewAll">Student</a></li>
+                    <li role="menuitem"><a href="dailyAction?student_class=A&student_grade=Senior">Daily form </a></li>
+
                 </ul>
             </li>
         </ul>
