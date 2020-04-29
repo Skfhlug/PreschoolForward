@@ -16,14 +16,15 @@
         <div class="formDesign">
             <form action="editUserServlet" method="post">
                 <div class="form-group col-md-6">
-                    <label>ID:</label>
-                    <input type="text" name="id" class="form-control" value="${user.id}" disabled/>
+                    <!--<label>ID:</label>-->
+                    <input type="hidden" name="id" class="form-control" value="${user.id}" />
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Username: ${user.username}</label>
+                    <input type="hidden" name="username" class="form-control" value="${user.username}" />
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label>Username:</label>
-                        <input type="text" name="username" class="form-control" value="${user.username}" disabled/>
-                    </div>
                     <div class="form-group col-md-6">
                         <label>Password:</label>
                         <input type="password" name="password" class="form-control" value="${user.password}"/>

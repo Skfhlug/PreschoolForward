@@ -27,16 +27,17 @@ public class AddParent extends HttpServlet {
         //Student student = new Student();
         Parent parent = new Parent();
 
+        int user_id = Integer.parseInt(req.getParameter("user_id"));
         String username = req.getParameter("username");
         String studentID = req.getParameter("studentID");
-        int student_id = Integer.parseInt(studentID);
+
 
         GenericDao userDao = new GenericDao(User.class);
         GenericDao studentDao = new GenericDao(Student.class);
         req.setAttribute("students", studentDao.getAll());
 
-        User user = (User) userDao.getByPropertyLike("username", username).get(0);
-        Student student = (Student) studentDao.getById(student_id);
+        User user = (User) userDao.getById(user_id);
+        Student student = (Student) studentDao.getById(Integer.parseInt(studentID));
 
         parent.setStudent(student);
         parent.setUser(user);

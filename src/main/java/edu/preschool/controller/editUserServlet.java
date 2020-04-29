@@ -3,6 +3,8 @@ package edu.preschool.controller;
 
 import edu.preschool.entity.User;
 import edu.preschool.persitence.GenericDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.client.WebTarget;
 import java.io.IOException;
-
 @WebServlet(
         urlPatterns = {"/editUserServlet"}
 )
@@ -42,9 +43,8 @@ public class editUserServlet extends HttpServlet {
             userDao.saveOrUpdate(user);
 
         }
-        response.sendRedirect("/searchUser?searchTerm=&searchType=id&submit=viewAll");
-        //RequestDispatcher dispatcher = request.getRequestDispatcher("/searchUser?searchTerm=&searchType=id&submit=viewAll");
-        //dispatcher.forward(request, response);
+        response.sendRedirect("searchUser?searchTerm=&searchType=id&submit=viewAll");
+
     }
 
 

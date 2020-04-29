@@ -15,10 +15,12 @@
 <body>
     <h1>Add parent information</h1>
     <c:if test="${sessionRole != null}" >
-        <p class="addStatus">Username:    ${sessionUsername}</p>
-        <p class="addStatus">User Status: ${sessionRole}</p>
+
         <form action="addParent" method="post">
             <div class="form-group col-cm-3">
+                <label>User ID:</label>
+                <input type="text" name="user_id" class="form-control"  value="${added_id}" disabled/>
+
                 <label>Username:</label>
                 <input type="text" name="username" class="form-control"  value="${sessionUsername}" disabled/>
 
