@@ -7,7 +7,7 @@
 <html><body>
 
 <h2>Search User Results: </h2>
-<p>Admin: ${user}</p>
+
 <a href="addUser.jsp"><button>Add User</button></a>
 <form action="searchUser" method="GET">
     <div class="form-group">
@@ -39,6 +39,7 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <c:forEach var="user" items="${users}">
             <tr>
@@ -49,6 +50,7 @@
                 <td>${user.email}</td>
                 <td>${user.phone}</td>
                 <td><a  href="editUserServlet?editID=${user.id}">edit</a></td>
+                <td><a  href="deleteUser?deleteID=${user.id}">delete</a></td>
             </tr>
         </c:forEach>
         <c:forEach var="foundList" items="${resultList}">
@@ -60,6 +62,7 @@
                 <td>${foundList.email}</td>
                 <td>${foundList.phone}</td>
                 <td><a href="editUserServlet?editID=${user.id}">edit</a></td>
+                <td><a  href="deleteUser?deleteID=${user.id}">delete</a></td>
             </tr>
         </c:forEach>
 

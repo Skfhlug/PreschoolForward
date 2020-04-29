@@ -55,7 +55,6 @@ public class addUserServlet extends HttpServlet {
         logger.info("Added user");
 
 
-
         RequestDispatcher dispatcher = request.getRequestDispatcher("/addRole.jsp");
         dispatcher.forward(request, response);
     }

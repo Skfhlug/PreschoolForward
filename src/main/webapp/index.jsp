@@ -4,11 +4,12 @@
 <%@include file="head.jsp"%>
 <%@include file="header.jsp"%>
 
+
 <c:if test="${pageContext.request.isUserInRole('admin')}">
     <a href = "addReminder.jsp"><button>Add Reminder</button></a>
     <a href = "reminder.jsp"><button>Reminder</button></a>
     <a href = "user.jsp"><button>User</button></a>
-    <p>Welcome : ${active_username}</p>
+    <p>Welcome : <%= request.getRemoteUser()%></p>
 </c:if>
 
 <div class="background1">

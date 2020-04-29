@@ -11,14 +11,34 @@
         <h1>New User was added.</h1>
         <c:forEach var="list" items="${resultList}">
 
-                <p>${list.id}</p>
-                <p>${list.first_name}</p>
-                <td>${list.last_name}</td>
-                <td>${list.username}</td>
-                <td>${list.email}</td>
+            <p>User ID:  ${list.id}</p>
+            <p>Name:     ${list.first_name} ${list.last_name}</p>
+            <p>Username: ${list.username}</p>
+            <p>Email:    ${list.email}</p>
+            <p>Role:     ${role}</p>
 
         </c:forEach>
     </div>
+<table class="userTable">
+<tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Phone</th>
+</tr>
+<c:forEach var="user" items="${users}">
+    <tr>
+        <td>${user.id}</td>
+        <td>${user.first_name}</td>
+        <td>${user.last_name}</td>
+        <td>${user.username}</td>
+        <td>${user.email}</td>
+        <td>${user.phone}</td>
+    </tr>
+</c:forEach>
+</table>
 
 </div>
 
@@ -34,5 +54,7 @@
         <p>&copy; White Steeple School, 5849 N Nina Ave, Chicago, IL 60631</p>
     </div>
 </footer>
+
+
 </body>
 </html>

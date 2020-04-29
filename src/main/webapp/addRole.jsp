@@ -28,7 +28,7 @@
             <select  name="role">
                 <option value="admin">Admin</option>
                 <option value="teacher">Teacher</option>
-                <option value="parent">parent</option>
+                <option value="parent">Parent</option>
             </select>
         </div>
 

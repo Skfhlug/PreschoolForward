@@ -30,7 +30,6 @@
         <input type="radio" name="searchType" value="id" checked> ID &nbsp;
         <input type="radio" name="searchType" value="student_id"> Student ID
         <input type="radio" name="searchType" value="user_id" > User ID &nbsp;
-        <input type="radio" name="searchType" value="gender"> Gender
 
     </div>
     <input type="submit" name="" value="Search" /><button type="submit" name="submit" value="viewAll">View All</button>
@@ -42,7 +41,6 @@
     <tr>
         <th>ID</th>
         <th>Parent Name</th>
-        <th>Gender</th>
         <th>Student Name</th>
         <th>grade</th>
         <th>class</th>
@@ -53,8 +51,7 @@
         <tr>
             <td>${parent.id}</td>
             <td>${parent.user.first_name} ${parent.user.last_name}</td>
-            <td>${parent.gender}</td>
-            <td>${parent.student.first_name} ${parent.student.first_name}</td>
+            <td>${parent.student.first_name} ${parent.student.last_name}</td>
             <td>${parent.student.grade}</td>
             <td>${parent.student.class_room}</td>
             <td><a  href="editParentServlet?editID=${parent.id}">edit</a></td>
@@ -64,8 +61,7 @@
         <tr>
             <td>${foundList.id}</td>
             <td>${foundList.user.first_name} ${parent.user.last_name}</td>
-            <td>${foundList.gender}</td>
-            <td>${foundList.student.first_name} ${parent.student.first_name}</td>
+            <td>${foundList.student.first_name} ${parent.student.last_name}</td>
             <td>${foundList.student.grade}</td>
             <td>${foundList.student.class_room}</td>
             <td><a  href="editParentServlet?editID=${parent.id}">edit</a></td>

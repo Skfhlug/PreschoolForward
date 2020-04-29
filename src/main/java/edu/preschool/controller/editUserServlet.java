@@ -22,45 +22,29 @@ public class editUserServlet extends HttpServlet {
     private GenericDao userDao;
     @Override
     public void init() throws ServletException {
-        genericDao = new GenericDao(User.class);
+        userDao = new GenericDao(User.class);
 
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        userDao = new GenericDao(User.class);
-        String user_name = request.getParameter("username");
-        User user = (User) userDao.getByPropertyLike("username", user_name);
+        int id = Integer.parseInt(request.getParameter("id"));
+        User user = (User) userDao.getById(id);
 
+        user.setUsername(request.getParameter("username"));
+        user.setFirst_name(request.getParameter("first_name"));
+        user.setLast_name(request.getParameter("last_name"));
+        user.setPassword(request.getParameter("password"));
+        user.setEmail(request.getParameter("email"));
+        user.setPhone(request.getParameter("phone"));
 
-        user.setId(Integer.valueOf(request.getParameter("id")));
-        user.setUsername(request.getParameter("username").trim());
-        user.setFirst_name(request.getParameter("first_name").trim());
-        user.setLast_name(request.getParameter("last_name").trim());
-        user.setPassword(request.getParameter("password").trim());
-        user.setEmail(request.getParameter("email").trim());
-        user.setPhone(request.getParameter("phone").trim());
-        System.out.println("Id : " + Integer.valueOf(request.getParameter("id").trim()));
-        System.out.println("username : " + request.getParameter("username"));
-        System.out.println("first_name : " + request.getParameter("first_name").trim());
-        System.out.println("last_name : " + request.getParameter("last_name").trim());
-        System.out.println("email : " + request.getParameter("email").trim());
-        System.out.println("phone : " + request.getParameter("phone").trim());
+        if(request.getRemoteUser().equals(request.getParameter("username")) || request.isUserInRole("admin")) {
+            userDao.saveOrUpdate(user);
 
-        /*User user = new User(Integer.valueOf(request.getParameter("id")),
-                request.getParameter("first_name"),
-                request.getParameter("last_name"),
-                request.getParameter("username"),
-                request.getParameter("password"),
-                request.getParameter("email"),
-                request.getParameter("phone"));
-            genericDao.saveOrUpdate(user);*/
-
-
-        userDao.saveOrUpdate(user);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/searchUser?searchTerm=&searchType=id&submit=viewAll");
-        dispatcher.forward(request, response);
+        }
+        response.sendRedirect("/searchUser?searchTerm=&searchType=id&submit=viewAll");
+        //RequestDispatcher dispatcher = request.getRequestDispatcher("/searchUser?searchTerm=&searchType=id&submit=viewAll");
+        //dispatcher.forward(request, response);
     }
 
 
@@ -73,7 +57,7 @@ public class editUserServlet extends HttpServlet {
 
 
         //request.setAttribute("editUser",genericDao.getById(Integer.valueOf(request.getParameter("user_id"))));
-        request.setAttribute("user", genericDao.getById(Integer.valueOf(request.getParameter("editID"))));
+        request.setAttribute("user", userDao.getById(Integer.valueOf(request.getParameter("editID"))));
         String url = "/editUser.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);

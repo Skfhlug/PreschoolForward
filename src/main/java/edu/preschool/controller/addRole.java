@@ -1,6 +1,7 @@
 package edu.preschool.controller;
 
 import edu.preschool.entity.Role;
+import edu.preschool.entity.Student;
 import edu.preschool.entity.User;
 import edu.preschool.persitence.GenericDao;
 import org.apache.logging.log4j.LogManager;
@@ -26,26 +27,33 @@ public class addRole  extends HttpServlet{
         GenericDao genericDao = new GenericDao(Role.class);
         HttpSession session = request.getSession();
 
-
-
         String username = (String) session.getAttribute("added_username");
         GenericDao userDao = new GenericDao(User.class);
         User user = (User) userDao.getByPropertyLike("username", username).get(0);
-        System.out.println("username =" + username);
-        System.out.println(user);
 
         role.setRole_name(request.getParameter("role"));
         role.setUsername(user);
-        System.out.println(username);
 
+
+        request.setAttribute("users", userDao.getAll());
         String role_name = request.getParameter("role");
 
+
         int id = genericDao.insert(role);
+        GenericDao studentDao = new GenericDao(Student.class);
+        request.setAttribute("students", studentDao.getAll());
+
         session.setAttribute("sessionAdd", "Added User Successful");
         request.setAttribute("resultList", userDao.getByPropertyLike("username", username));
 
-        if(role_name == "parent") {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/addParent");
+        session.setAttribute("sessionRole", role_name);
+        session.setAttribute("sessionUsername", username);
+
+        request.setAttribute("role", role_name);
+        String parentID = request.getParameter("userID");
+
+        if(role_name.equals("parent")) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/addParentDetail.jsp");
             dispatcher.forward(request, response);
         } else {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/addUserSuccess.jsp");

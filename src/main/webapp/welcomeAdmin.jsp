@@ -11,11 +11,10 @@
 <%@include file="header.jsp"%>
 <body>
 
-    Welcome Admin
     <a href = "addReminder.jsp"><button>Add Reminder</button></a>
     <a href = "reminder.jsp"><button>Reminder</button></a>
     <a href = "user.jsp"><button>User</button></a>
-
+    <p>Welcome : ${request.getRemoteUser()}</p>
     <div class="background1">
         <div class = "backgroundInfo">
 

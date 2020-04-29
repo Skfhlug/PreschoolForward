@@ -10,16 +10,31 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <nav aria-label="main menu">
-        <a href="logout.jsp" class="loginLink">  |  Logout</a>
+
+        <c:choose>
+            <c:when test="${(pageContext.request.isUserInRole('admin')) ||
+                                    (pageContext.request.isUserInRole('teacher')) ||
+                                    (pageContext.request.isUserInRole('parent')) }">
+                <a href="logout.jsp" class="loginLink">  |  Logout</a>
+                <p class="usernameHeader">Welcome : <%= request.getRemoteUser()%></p>
+            </c:when>
+            <c:otherwise>
+                <a href="welcomeAdmin.jsp" class="loginLink">Log in</a>
+            </c:otherwise>
+        </c:choose>
+
+       <!-- <a href="logout.jsp" class="loginLink">  |  Logout</a>
+
         <a href="welcomeAdmin.jsp" class="loginLink">Log in</a>
-        <p>${active_username}</p>
+        <br>-->
+        <!--<p>Welcome : <%= request.getRemoteUser()%></p>-->
 
         <a href=index.jsp><img id="logo" alt="School logo" src="img/schoolLogo.png" /></a>
         <ul role="menubar">
             <li role="menuitem"><a href=index.jsp>Home</a></li>
             <li role="menuitem"><a href=gallery.html>Event Gallery</a></li>
             <li role="menuitem"><a href="resources.html">Resource</a></li>
-            <li role="menuitem"><a href="#">Register <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
+            <li role="menuitem"><a href="#">More <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
                 <ul>
                     <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
                     <li role="menuitem"><a href="reminder?searchTerm=&searchType=id&submit=viewAll">Reminder</a></li>

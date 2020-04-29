@@ -23,6 +23,6 @@ public class logout extends HttpServlet{
 
         request.getSession().invalidate();
         response.sendRedirect(request.getContextPath());
-        response.sendRedirect("/index.jsp");
+        //response.sendRedirect("/PreschoolForward");
     }
 }

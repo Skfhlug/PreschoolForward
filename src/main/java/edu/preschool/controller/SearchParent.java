@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -21,6 +22,9 @@ public class SearchParent extends HttpServlet{
 
         String searchTerm = req.getParameter("searchTerm" );
         String searchType = req.getParameter("searchType" );
+        String active_username = req.getRemoteUser();
+        HttpSession session  = req.getSession();
+        session.setAttribute("user", active_username);
 
         GenericDao genericDao = new GenericDao(Parent.class);
 
