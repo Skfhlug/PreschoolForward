@@ -1,40 +1,25 @@
 <%--
   Created by IntelliJ IDEA.
-  User: student
-  Date: 2/29/20
-  Time: 2:05 PM
+  User: supar
+  Date: 5/1/2020
+  Time: 8:27 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+
 <%@include file="head.jsp"%>
 <%@include file="header.jsp"%>
-<head>
-    <title>Student</title>
-</head>
-<body>
-<h2>Student</h2> <a href="addUser.jsp"><button>Add Student</button></a>
-<form action="searchStudent" method="GET">
-    <div class="form-group">
-        <label>What are you looking for:</label>
-        <input type="text" name="searchTerm" class="form-control" placeholder="Enter Searching key here" />
-    </div>
-    <div class="form-group">
-        <label>Type:</label>
-        <input type="radio" name="searchType" value="id" checked> ID &nbsp;
-        <input type="radio" name="searchType" value="first_name" > First Name &nbsp;
-        <input type="radio" name="searchType" value="last_name"> Last Name &nbsp;
-        <input type="radio" name="searchType" value="grade" > Grade&nbsp;
-        <input type="radio" name="searchType" value="class_room" > Class
+<title>Add Student Success</title>
 
-    </div>
-    <input type="submit" name="" value="Search" /> <button type="submit" name="submit" value="viewAll">View All</button>
-</form>
+<div class="background1">
+    <div class = "backgroundInfo">
 
-    <p>-------------------------------------------------------------------------------------------</p>
+        <c:if test="${studentAdded != null}" >
+            <p class="addStatus">${studentAdded}</p>
+            <c:set var="studentAdded"  scope="session" />
+            <c:remove var="studentAdded"/>
+        </c:if>
 
     <table class="studentTable">
         <tr>
@@ -62,8 +47,6 @@
                 <td>${student.emergency_phone1}</td>
                 <td>${student.emergency_phone2}</td>
                 <td>${student.parent_status}</td>
-                <td><a  href="editStudentServlet?editID=${student.id}">edit</a></td>
-                <td><a  href="deleteStudent?deleteID=${student.id}">delete</a></td>
             </tr>
         </c:forEach>
         <c:forEach var="foundList" items="${resultList}">
@@ -78,13 +61,26 @@
                 <td>${foundList.emergency_phone1}</td>
                 <td>${foundList.emergency_phone2}</td>
                 <td>${foundList.parent_status}</td>
-                <td><a  href="editStudentServlet?editID=${student.id}">edit</a></td>
-                <td><a  href="deleteStudent?deleteID=${student.id}">delete</a></td>
             </tr>
         </c:forEach>
 
     </table>
+    </div>
+</div>
+
+<footer>
+    <div class="ftCopyLeft">
+        <p><i class="fas fa-phone"></i> CONTACT US :<a href="tel:+01-773-631-3129"> (773) 631-3129</a></p>
+        <p><i class="fas fa-envelope"></i> Email :<a href="mailto:whitesteeple@somemail.com"> whitesteeple@somemail.com</a></p>
+        <p><i class="fas fa-clock"></i> Office Hours: Mon-Fri 8:00 - 22:00</p>
+    </div>
+    <div class="ftCopyRight">
+        <p> White Steeple Schoool|  <a href="#">Privacy Policy</a></p>
+        <p>Design by Suparin Fhlug</p>
+        <p>&copy; White Steeple School, 5849 N Nina Ave, Chicago, IL 60631</p>
+    </div>
+</footer>
+
 
 </body>
-<%@include file="footer.jsp"%>
 </html>

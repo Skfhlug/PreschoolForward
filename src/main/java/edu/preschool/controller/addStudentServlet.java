@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(
@@ -23,7 +24,7 @@ public class addStudentServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("you are in addStudentServlet page");
-
+        logger.info("AddStudentServlet is working");
         Student student = new Student();
 
         String first_name = req.getParameter("first_name" );
@@ -39,7 +40,7 @@ public class addStudentServlet extends HttpServlet {
         String parent_status = req.getParameter("parent_status");
         String gender = req.getParameter("gender");
 
-        student.setId(0);
+        student.setId(1);
         student.setFirst_name(first_name);
         student.setMiddle_name(middle_name);
         student.setLast_name(last_name);
@@ -52,9 +53,6 @@ public class addStudentServlet extends HttpServlet {
         student.setPicture_address("test");
         student.setParent_status(parent_status);
         student.setGender(gender);
-
-
-        int userId = 1;
 
         System.out.println("first name : " + first_name);
         System.out.println("middle name : " + middle_name);
@@ -71,13 +69,22 @@ public class addStudentServlet extends HttpServlet {
 
 
 
-        GenericDao genericDao = new GenericDao(Reminder.class);
-        //Student student = new Student(first_name, middle_name, last_name, address, date_of_birth, classRoom, grade, emergency_phone1,emergency_phone2, "test", parent_status, gender);
+        GenericDao genericDao = new GenericDao(Student.class);
         int id = genericDao.insert(student);
 
-        System.out.println("student id = " + id);
+        HttpSession session = req.getSession();
+        session.setAttribute("added_id",id);
+        session.setAttribute("added_username", req.getParameter("username"));
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/student.jsp");
+        String successMessage;
+        String studentAddedDetail = "New user was added"
+                + "\nID : " + id
+                + "\nFirst Name: " + req.getParameter("first_name")
+                + "\nLast Name: " + req.getParameter("last_name");
+        session.setAttribute("studentAdded", studentAddedDetail);
+        logger.info("Add new student \nstudent id = " + id);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/addStudentSuccess.jsp");
         dispatcher.forward(req, resp);
     }
 }

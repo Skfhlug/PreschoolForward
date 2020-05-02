@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(
@@ -31,7 +32,7 @@ public class AddParent extends HttpServlet {
         String username = req.getParameter("username");
         String studentID = req.getParameter("studentID");
 
-
+        GenericDao parentDao = new GenericDao(Parent.class);
         GenericDao userDao = new GenericDao(User.class);
         GenericDao studentDao = new GenericDao(Student.class);
         req.setAttribute("students", studentDao.getAll());
@@ -39,10 +40,24 @@ public class AddParent extends HttpServlet {
         User user = (User) userDao.getById(user_id);
         Student student = (Student) studentDao.getById(Integer.parseInt(studentID));
 
+        parent.setId(1);
         parent.setStudent(student);
         parent.setUser(user);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/addParentSuccess.jsp");
+        int id = parentDao.insert(parent);
+
+        String addedMessage = "Student ID was assigned to parent detail";
+
+        HttpSession session = req.getSession();
+        session.setAttribute("addedParent", addedMessage);
+        req.setAttribute("users",user);
+        req.setAttribute("students", student);
+
+        //RequestDispatcher dispatcher = req.getRequestDispatcher("searchParent?searchTerm=&searchType=id&submit=viewAll");
+        //dispatcher.forward(req, resp);
+
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/searchParent?searchTerm=&searchType=id&submit=viewAll");
         dispatcher.forward(req, resp);
     }
 }

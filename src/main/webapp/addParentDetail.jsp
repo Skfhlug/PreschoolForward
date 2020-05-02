@@ -18,12 +18,12 @@
 
         <form action="addParent" method="post">
             <div class="form-group col-cm-3">
-                <label>User ID:</label>
-                <input type="text" name="user_id" class="form-control"  value="${added_id}" disabled/>
-
-                <label>Username:</label>
-                <input type="text" name="username" class="form-control"  value="${sessionUsername}" disabled/>
-
+                <label>User ID: ${added_id}</label>
+                <input type="hidden" name="user_id" class="form-control"  value="${added_id}" />
+                <br>
+                <label>Username: ${sessionUsername}</label>
+                <input type="hidden" name="username" class="form-control"  value="${sessionUsername}"  />
+                <br>
                 <label>Student Id Control:</label>
                 <input type="text" name="studentID" class="form-control" placeholder="" required/>
                 <br/>

@@ -23,16 +23,10 @@
             </c:otherwise>
         </c:choose>
 
-       <!-- <a href="logout.jsp" class="loginLink">  |  Logout</a>
-
-        <a href="welcomeAdmin.jsp" class="loginLink">Log in</a>
-        <br>-->
-        <!--<p>Welcome : <%= request.getRemoteUser()%></p>-->
-
         <a href=index.jsp><img id="logo" alt="School logo" src="img/schoolLogo.png" /></a>
         <ul role="menubar">
             <li role="menuitem"><a href=index.jsp>Home</a></li>
-            <li role="menuitem"><a href=gallery.html>Event Gallery</a></li>
+            <li role="menuitem"><a href=gallery.jsp>Event Gallery</a></li>
             <li role="menuitem"><a href="resources.html">Resource</a></li>
             <li role="menuitem"><a href="#">More <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
                 <ul>

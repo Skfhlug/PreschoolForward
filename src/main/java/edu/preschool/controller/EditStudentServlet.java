@@ -1,6 +1,6 @@
 package edu.preschool.controller;
 
-
+import edu.preschool.entity.Student;
 import edu.preschool.entity.User;
 import edu.preschool.persitence.GenericDao;
 import org.apache.logging.log4j.LogManager;
@@ -12,19 +12,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.ws.rs.client.WebTarget;
 import java.io.IOException;
+
 @WebServlet(
-        urlPatterns = {"/editUserServlet"}
+        urlPatterns = {"/editStudentServlet"}
 )
-public class editUserServlet extends HttpServlet {
+public class EditStudentServlet extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    private GenericDao genericDao;
-    private GenericDao userDao;
+
+    private GenericDao studentDao;
     @Override
     public void init() throws ServletException {
-        userDao = new GenericDao(User.class);
+        studentDao = new GenericDao(Student.class);
 
     }
 
@@ -32,19 +31,21 @@ public class editUserServlet extends HttpServlet {
             throws ServletException, IOException {
 
         int id = Integer.parseInt(request.getParameter("id"));
-        logger.info("Editing user data\n User ID:" + id);
+        logger.info("Editing Student data\nStudent ID:" + id);
 
-        User user = (User) userDao.getById(id);
-
-        user.setUsername(request.getParameter("username"));
-        user.setFirst_name(request.getParameter("first_name"));
-        user.setLast_name(request.getParameter("last_name"));
-        user.setPassword(request.getParameter("password"));
-        user.setEmail(request.getParameter("email"));
-        user.setPhone(request.getParameter("phone"));
+        Student student= (Student) studentDao.getById(id);
+        student.setFirst_name(request.getParameter("first_name"));
+        student.setMiddle_name(request.getParameter("middle_name"));
+        student.setLast_name(request.getParameter("last_name"));
+        student.setAddress(request.getParameter("address"));
+        student.setClass_room(request.getParameter("class_room"));
+        student.setGrade(request.getParameter("grade"));
+        student.setEmergency_phone1(request.getParameter("phone1"));
+        student.setEmergency_phone2(request.getParameter("phone2"));
+        student.setParent_status(request.getParameter("parent_status"));
 
         if(request.getRemoteUser().equals(request.getParameter("username")) || request.isUserInRole("admin")) {
-            userDao.saveOrUpdate(user);
+            studentDao.saveOrUpdate(student);
 
         }
         response.sendRedirect("searchUser?searchTerm=&searchType=id&submit=viewAll");
@@ -57,12 +58,10 @@ public class editUserServlet extends HttpServlet {
             throws ServletException, IOException {
 
         GenericDao dao = new GenericDao(User.class);
-        User user = new User();
-
 
         //request.setAttribute("editUser",genericDao.getById(Integer.valueOf(request.getParameter("user_id"))));
-        request.setAttribute("user", userDao.getById(Integer.valueOf(request.getParameter("editID"))));
-        String url = "/editUser.jsp";
+        request.setAttribute("student", studentDao.getById(Integer.valueOf(request.getParameter("editID"))));
+        String url = "/editStudent.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }

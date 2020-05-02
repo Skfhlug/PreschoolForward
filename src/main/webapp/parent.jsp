@@ -44,7 +44,7 @@
         <th>Student Name</th>
         <th>grade</th>
         <th>class</th>
-        <th>Edit</th>
+        <th>Delete</th>
 
     </tr>
     <c:forEach var="parent" items="${parents}">
@@ -54,7 +54,7 @@
             <td>${parent.student.first_name} ${parent.student.last_name}</td>
             <td>${parent.student.grade}</td>
             <td>${parent.student.class_room}</td>
-            <td><a  href="editParentServlet?editID=${parent.id}">edit</a></td>
+            <td><a  href="deleteParentStudentRelationship?deleteID=${parent.id}">Delete</a></td>
         </tr>
     </c:forEach>
     <c:forEach var="foundList" items="${resultList}">
@@ -64,7 +64,7 @@
             <td>${foundList.student.first_name} ${parent.student.last_name}</td>
             <td>${foundList.student.grade}</td>
             <td>${foundList.student.class_room}</td>
-            <td><a  href="editParentServlet?editID=${parent.id}">edit</a></td>
+            <td><a  href="deleteParentStudentRelationship?deleteID=${parent.id}">Delete</a></td>
         </tr>
     </c:forEach>
 

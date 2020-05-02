@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label>Last Name:</label>
-                        <input type="text" name="last_name" class="form-control" value="${user.first_name}"/>
+                        <input type="text" name="last_name" class="form-control" value="${user.last_name}"/>
                     </div>
                 </div>
 
