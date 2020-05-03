@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  student: suparin
+  Date: 5/2/2020
+  Time: 10:20 AM
+  To change this template use File | Settings | File Templates.
+--%>
 <!doctype>
 <html lang="en">
 <%@include file="head.jsp"%>

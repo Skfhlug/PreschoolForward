@@ -26,16 +26,17 @@
                 <role-name>admin</role-name>
             </auth-constraint>
         </security-constraint>
-<!--
+
         <security-constraint>
             <web-resource-collection>
-               <url-pattern>/welcomeAdmin.jsp</url-pattern>
+                <web-resource-name>parent</web-resource-name>
+                <url-pattern>/welcomeAdmin.jsp</url-pattern>
             </web-resource-collection>
             <auth-constraint>
-                <role-name>teacher</role-name>
+                <role-name>parent</role-name>
             </auth-constraint>
         </security-constraint>
--->
+
     <security-role>
         <role-name>admin</role-name>
     </security-role>

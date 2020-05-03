@@ -48,6 +48,8 @@
             <th>Emergency Tel1</th>
             <th>Emergency Tel2</th>
             <th>Parent Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
 
         </tr>
         <c:forEach var="student" items="${students}">

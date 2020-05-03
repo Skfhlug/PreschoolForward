@@ -25,5 +25,7 @@
         <mapping class="edu.preschool.entity.Role"/>
         <mapping class="edu.preschool.entity.Student"/>
         <mapping class="edu.preschool.entity.Parent"/>
+        <mapping class="edu.preschool.entity.Report"/>
+
     </session-factory>
 </hibernate-configuration>

@@ -84,7 +84,7 @@ public class addStudentServlet extends HttpServlet {
         session.setAttribute("studentAdded", studentAddedDetail);
         logger.info("Add new student \nstudent id = " + id);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/addStudentSuccess.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/searchStudent?searchTerm=&searchType=id&submit=viewAll");
         dispatcher.forward(req, resp);
     }
 }

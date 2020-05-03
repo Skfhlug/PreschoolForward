@@ -48,7 +48,7 @@ public class EditStudentServlet extends HttpServlet {
             studentDao.saveOrUpdate(student);
 
         }
-        response.sendRedirect("searchUser?searchTerm=&searchType=id&submit=viewAll");
+        response.sendRedirect("searchStudent?searchTerm=&searchType=id&submit=viewAll");
 
     }
 

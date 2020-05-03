@@ -157,21 +157,7 @@ public class GenericDao<T> {
     }
 
 
-    public List<T> getByPropertiesLike(String propertyName1, String value1, String propertyName2, String value2) {
 
-        Session session = getSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<T> query = builder.createQuery(type);
-        Root<T> root = query.from(type);
-        Expression<String> propertyPath1 = root.get(propertyName1);
-        Expression<String> propertyPath2 = root.get(propertyName1);
-
-        CriteriaQuery<T> where = query.where((builder.like(propertyPath1, "%" + value1 + "%")), (builder.like(propertyPath1, "%" + value1 + "%")));
-
-        List<T> entity = session.createQuery(query).getResultList();
-        session.close();
-        return entity;
-    }
     /**
      *
      * @return
