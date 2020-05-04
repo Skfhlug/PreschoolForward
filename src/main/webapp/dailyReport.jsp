@@ -14,14 +14,141 @@
     <title>Daily Report</title>
 </head>
 <body>
-    <h1>${info}</h1>
-    <h2>Student Name: ${student.first_name} ${student.last_name}</h2>
-    <p>${date}</p>
 
-    <p>Emotion rate: ${report.emotion}</p>
-    <p>Eating rate:  ${report.eating}</p>
-    <p>Sleeping rate: ${report.sleeping}</p>
+<div class="dailyReport">
 
-    <p>Updated by: ${report.user_id}</p>
+
+    <!--/*
+        <h1>${info}</h1>
+        <p>Parent Id: ${parent_id}</p>
+        <p>Student ID : ${student.id}</p>
+        <h2>${student.first_name} ${student.last_name}</h2> <p class="dateRight">${date}</p>
+
+    */-->
+    <h1>Daily Report</h1>
+    <h2>${student.first_name} ${student.last_name}</h2>
+    <p class="dateRight">${date}</p>
+    <p class="titleRate">Emotion rate:
+        <div class="emotion rating">
+            <c:choose>
+                <c:when test="${report.emotion == 1}">
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                </c:when>
+                <c:when test="${report.emotion == 2}">
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                </c:when>
+                <c:when test="${report.emotion == 3}">
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                </c:when>
+                <c:when test="${report.emotion == 4}">
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                </c:when>
+                <c:when test="${report.emotion == 5}">
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                    <span class="emotion" style="font-size:100%;color:#FF7417;">&starf;</span>
+                </c:when>
+            </c:choose>
+        </div></p>
+    <p class="titleRate">Eating rate:  <div class="eating rating">
+        <c:choose>
+            <c:when test="${report.emotion == 1}">
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+            </c:when>
+            <c:when test="${report.emotion == 2}">
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+            </c:when>
+            <c:when test="${report.emotion == 3}">
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+            </c:when>
+            <c:when test="${report.emotion == 4}">
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#ADADC9;">&starf;</span>
+            </c:when>
+            <c:when test="${report.emotion == 5}">
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="eating" style="font-size:100%;color:#FF7417;">&starf;</span>
+            </c:when>
+        </c:choose>
+    </div>
+    </p>
+    <p class="titleRate">Sleeping rate:
+        <div class="sleeping rating">
+        <c:choose>
+            <c:when test="${report.emotion == 1}">
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+            </c:when>
+            <c:when test="${report.emotion == 2}">
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+            </c:when>
+            <c:when test="${report.emotion == 3}">
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+            </c:when>
+            <c:when test="${report.emotion == 4}">
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#ADADC9;">&starf;</span>
+            </c:when>
+            <c:when test="${report.emotion == 5}">
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+                <span class="sleeping" style="font-size:100%;color:#FF7417;">&starf;</span>
+            </c:when>
+        </c:choose>
+    </div></p>
+
+</div>
 </body>
 </html>

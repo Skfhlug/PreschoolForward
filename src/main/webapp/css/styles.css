@@ -471,3 +471,15 @@ div.desc {
     }
 }
 
+
+/***********************
+Daily Report
+*********************/
+.dailyReport {
+    width: 1000px;
+    border: 3px solid #EEEE22;
+    background-color: #ffffce;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+}

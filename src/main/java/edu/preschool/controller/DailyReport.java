@@ -62,19 +62,21 @@ public class DailyReport extends HttpServlet {
 
         //Map date and student id
         Map<String, Object> student_report = new HashMap<>();
-        student_report.put("report_date", todayDate);
+        student_report.put("report_date", reportDate);
         student_report.put("student", student_id);
         //Get Report
-        Report report = (Report) reportDao.findByPropertyEqual(student_report);
+        Report report = (Report) reportDao.findByPropertyEqual(student_report).get(0);
 
+        //Get teacher who update report
+        //User teacher = (User)
 
         String output = "parent id: " + user_id + "\nStudent id:" + student_id;
 
-        //req.setAttribute("daily", reportDao.getByPropertyLike(searchType, searchTerm));
         req.setAttribute("info", output);
+        req.setAttribute("parent_id", user_id);
+        req.setAttribute("student_id", student_id);
         req.setAttribute("student", student);
         req.setAttribute("report", report);
-
 
 
 
