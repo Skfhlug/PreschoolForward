@@ -11,6 +11,7 @@
 <html><body>
 <h1>Daily Form for ${date}</h1>
 <p>by ${user}</p>
+<p>Total student : ${numberOfStudent}</p>
 </body>
 
 <p>-------------------------------------------------------------------------------------------</p>
@@ -130,7 +131,8 @@
                     <span class="icon">★</span>
                 </label>
             </div></td>
-                <td><input type="submit" name="" value="Save" /><input type="button" name="absent" value="Absent" /></form></td>
+                <td><input type="submit" name="" value="Save" /><input type="button" name="absent" value="Absent" />
+            </form></td>
         </tr>
 
     </c:forEach>

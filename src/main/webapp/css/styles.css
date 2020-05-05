@@ -483,3 +483,19 @@ Daily Report
     margin: auto;
     margin-top: 20px;
 }
+.emotion-block, .eating-block, .sleeping-block {
+    margin-left: 200px;
+    margin-bottom: 20px;
+}
+.dateReport {
+    margin-left: 20px;
+}
+span.a{
+    display: inline;
+}
+span.b{
+    display: inline;
+}
+span.c{
+    display: inline;
+}

@@ -42,7 +42,6 @@ public class SearchUser extends HttpServlet{
         List<User> users = genericDao.getAll();
         req.setAttribute("users", users);
 
-
         if (searchTerm.length()>0 || req.getParameter("submit").equals("Search")) {
             req.setAttribute("resultList", genericDao.getByPropertyLike(searchType, searchTerm));
         } else {

@@ -13,14 +13,20 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import static sun.jvm.hotspot.gc.cms.AdaptiveFreeList.sizeOf;
 
 @WebServlet(
         name = "dailyAction",
         urlPatterns = { "/dailyAction" }
 )
 public class DailyAction extends HttpServlet {
+    private List<Student> studentInClass;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -37,8 +43,12 @@ public class DailyAction extends HttpServlet {
 
         GenericDao genericDao = new GenericDao(Student.class);
 
+        studentInClass = new ArrayList<>(genericDao.findByPropertyEqual(studentGroup));
+        //Student studentInClasses = (Student) genericDao.findByPropertyEqual(studentGroup);
+        int totalStudent= 4;
         req.setAttribute("students", genericDao.findByPropertyEqual(studentGroup));
         req.setAttribute("date", todayDate);
+        req.setAttribute("numberOfStudent", studentInClass.size());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/dailyForm.jsp");
         dispatcher.forward(req, resp);
