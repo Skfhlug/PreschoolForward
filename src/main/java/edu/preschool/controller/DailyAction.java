@@ -1,8 +1,12 @@
 package edu.preschool.controller;
 
+import edu.preschool.entity.Parent;
 import edu.preschool.entity.Reminder;
 import edu.preschool.entity.Student;
+import edu.preschool.entity.User;
 import edu.preschool.persitence.GenericDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,6 +30,31 @@ import static sun.jvm.hotspot.gc.cms.AdaptiveFreeList.sizeOf;
 )
 public class DailyAction extends HttpServlet {
     private List<Student> studentInClass;
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+        int student_id = Integer.parseInt(req.getParameter("studentID"));
+        int emotion_rate = Integer.parseInt(req.getParameter("emotion-stars"));
+        int eating_rate = Integer.parseInt(req.getParameter("emotion-stars"));
+        int sleeping_rate = Integer.parseInt(req.getParameter("emotion-stars"));
+
+
+        logger.info(student_id);
+
+
+
+        //RequestDispatcher dispatcher = req.getRequestDispatcher("searchParent?searchTerm=&searchType=id&submit=viewAll");
+        //dispatcher.forward(req, resp);
+
+
+        //RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+        //dispatcher.forward(req, resp);
+    }
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,6 +66,7 @@ public class DailyAction extends HttpServlet {
         HttpSession session  = req.getSession();
         session.setAttribute("user", active_username);
 
+
         Map<String, String> studentGroup = new HashMap<String, String>();
         studentGroup.put("class_room", student_class);
         studentGroup.put("grade", student_grade);
@@ -44,13 +74,17 @@ public class DailyAction extends HttpServlet {
         GenericDao genericDao = new GenericDao(Student.class);
 
         studentInClass = new ArrayList<>(genericDao.findByPropertyEqual(studentGroup));
-        //Student studentInClasses = (Student) genericDao.findByPropertyEqual(studentGroup);
-        int totalStudent= 4;
+
         req.setAttribute("students", genericDao.findByPropertyEqual(studentGroup));
         req.setAttribute("date", todayDate);
         req.setAttribute("numberOfStudent", studentInClass.size());
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/dailyForm.jsp");
+        for(int i=0; i<studentInClass.size(); i++) {
+
+        }
+
+        //RequestDispatcher dispatcher = req.getRequestDispatcher("/dailyForm.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/dailyRateForm.jsp");
         dispatcher.forward(req, resp);
     }
 

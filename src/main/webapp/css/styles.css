@@ -13,12 +13,14 @@ html {
 }
 
 footer {
+    position:relative;
     background-color:  #87CEEB;
     border: 3px #eeee22;
     opacity: .8;
     padding-top: 1em;
     padding-bottom: .5em;
     margin-top: .5em;
+    bottom: 0;
     height: 120px;
     line-height: 1.6;
     flex-shrink: 0;
@@ -479,16 +481,18 @@ Daily Report
     width: 1000px;
     border: 3px solid #EEEE22;
     background-color: #ffffce;
-    padding: 10px;
+    padding: 5em;
+    padding-top: 2em;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 2em;
 }
 .emotion-block, .eating-block, .sleeping-block {
     margin-left: 200px;
     margin-bottom: 20px;
 }
 .dateReport {
-    margin-left: 20px;
+    margin-bottom: 5em;
 }
 span.a{
     display: inline;

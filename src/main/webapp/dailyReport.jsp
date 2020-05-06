@@ -25,7 +25,7 @@
         <h2>${student.first_name} ${student.last_name}</h2> <p class="dateRight">${date}</p>
 
     */-->
-    <h1>Daily Report</h1> <p class="dateReport">date: ${date}</p>
+    <h1 class="dateReport">Daily Report date: ${date}</h1>
     <h2>${student.first_name} ${student.last_name}</h2>
 
 <br><br>
@@ -153,4 +153,5 @@
 
 </div>
 </body>
+<%@include file="footer.jsp"%>
 </html>

@@ -20,27 +20,15 @@ import java.util.List;
 )
 public class SearchUser extends HttpServlet{
 
-    private GenericDao userDao;
-
-    @Override
-    public void init() throws ServletException {
-        userDao =  new GenericDao(User.class);
-    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String  searchTerm = req.getParameter("searchTerm" );
-        String  searchType = req.getParameter("searchType" );
+        String searchTerm = req.getParameter("searchTerm" );
+        String searchType = req.getParameter("searchType" );
 
         GenericDao genericDao = new GenericDao(User.class);
 
-        String active_username = req.getRemoteUser();
-        HttpSession session  = req.getSession();
-        session.setAttribute("user", active_username);
-
-        List<User> users = genericDao.getAll();
-        req.setAttribute("users", users);
 
         if (searchTerm.length()>0 || req.getParameter("submit").equals("Search")) {
             req.setAttribute("resultList", genericDao.getByPropertyLike(searchType, searchTerm));

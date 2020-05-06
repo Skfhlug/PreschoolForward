@@ -35,7 +35,7 @@
                     <li role="menuitem"><a href="searchUser?searchTerm=&searchType=id&submit=viewAll">Users</a></li>
                     <li role="menuitem"><a href="searchParent?searchTerm=&searchType=id&submit=viewAll">Parent</a></li>
                     <li role="menuitem"><a href="searchStudent?searchTerm=&searchType=id&submit=viewAll">Student</a></li>
-                    <li role="menuitem"><a href="dailyAction?student_class=A&student_grade=Senior">Daily form </a></li>
+                    <li role="menuitem"><a href="selectRoom.jsp">Daily form </a></li>
 
                 </ul>
             </li>

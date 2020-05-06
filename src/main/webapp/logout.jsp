@@ -11,7 +11,6 @@
     <title>Title</title>
 </head>
 <%@include file="header.jsp"%>
-<%@include file="header.jsp"%>
 <body>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%

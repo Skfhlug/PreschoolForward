@@ -1,6 +1,7 @@
 
 package edu.preschool.controller;
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  * @since 2020-03-02
  */
 @WebServlet(
-        name = "logoutServlet", urlPatterns = {"/logout"}
+        name = "logoutServlet"
+        , urlPatterns = {"/logout"}
         )
 public class logout extends HttpServlet{
     protected void doGet(HttpServletRequest request,
@@ -22,7 +24,10 @@ public class logout extends HttpServlet{
             throws ServletException, IOException {
 
         request.getSession().invalidate();
-        response.sendRedirect(request.getContextPath());
-        //response.sendRedirect("/PreschoolForward");
+        //response.sendRedirect(request.getContextPath());
+        //response.sendRedirect("/PreschoolForward/");
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        dispatcher.forward(request, response);
     }
 }

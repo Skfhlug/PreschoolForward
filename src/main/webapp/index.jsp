@@ -4,13 +4,19 @@
 <%@include file="head.jsp"%>
 <%@include file="header.jsp"%>
 
-
-<c:if test="${pageContext.request.isUserInRole('admin')}">
-    <a href = "addReminder.jsp"><button>Add Reminder</button></a>
-    <a href = "reminder.jsp"><button>Reminder</button></a>
-    <a href = "user.jsp"><button>User</button></a>
-    <p>Welcome : <%= request.getRemoteUser()%></p>
-</c:if>
+<c:choose>
+    <c:when test="${(pageContext.request.isUserInRole('admin')) ||
+                                    (pageContext.request.isUserInRole('teacher')) }">
+        <p>Welcome : <%= request.getRemoteUser()%></p>
+        <a href = "student.jsp"><button>Student</button></a>
+        <a href = "reminder.jsp"><button>Reminder</button></a>
+        <a href = "user.jsp"><button>User</button></a>
+    </c:when>
+    <c:when test="${(pageContext.request.isUserInRole('parent'))}">
+        <p class="usernameHeader">Welcome : <%= request.getRemoteUser()%></p>
+        <a href = "dailyReport"><button>Student Report</button></a>
+    </c:when>
+</c:choose>
 
 <div class="background1">
     <div class = "backgroundInfo">

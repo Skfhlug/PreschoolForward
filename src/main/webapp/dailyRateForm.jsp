@@ -10,12 +10,12 @@
 <%@include file="header.jsp"%>
 <html><body>
 <h1>Daily Form for ${date}</h1>
-<p>by ${user}</p>
+<p>by <%= request.getRemoteUser()%></p>
 <p>Total student : ${numberOfStudent}</p>
 </body>
 
 <p>-------------------------------------------------------------------------------------------</p>
-
+<form  action="dailyRateForm" method="GET">
 <table class="studentTableForm">
     <tr>
         <th>ID</th>
@@ -23,44 +23,45 @@
         <th>Emotion Rate</th>
         <th>Eating Rate</th>
         <th>Sleeping Rate</th>
-        <th>Save</th>
     </tr>
-
-    <c:forEach var="student" items="${students}">
-
+    <!--<label>Total student:</label>-->
+    <input type="hidden" name="totalStudent" class="form-control" value="${numberOfStudent}" />
+    <!--<label>Total student:</label>-->
+    <input type="hidden" name="user_id" class="form-control" value="<%= request.getRemoteUser()%>" />
+    <!--<label>date:</label>-->
+    <input type="hidden" name="todayDate" class="form-control" value="${date}" />
+    <c:forEach var="student" items="${students}" varStatus="loop">
+        <!--<label>ID:</label>-->
+        <input type="hidden" name="studentID${loop.index}" class="form-control" value="${student.id}" />
         <tr>
             <td>${student.id}</td>
             <td>${student.first_name} ${student.last_name}</td>
-            <form  action="addReport" method="GET">
-                <!--<label>ID:</label>-->
-                <input type="hidden" name="studentID" class="form-control" value="${student.id}" />
-                <!--<label>date:</label>-->
-                <input type="hidden" name="todayDate" class="form-control" value="${date}" />
+
                 <td><div class="rating">
                     <label>
-                        <input type="radio" name="emotion-stars" value="1" />
+                        <input type="radio" name="emotion${loop.index}" value="1" />
                         <span class="icon">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="emotion-stars" value="2" />
-                        <span class="icon">★</span>
-                        <span class="icon">★</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="emotion-stars" value="3" />
-                        <span class="icon">★</span>
+                        <input type="radio" name="emotion${loop.index}" value="2" />
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="emotion-stars" value="4" />
-                        <span class="icon">★</span>
+                        <input type="radio" name="emotion${loop.index}" value="3" />
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="emotion-stars" value="5" />
+                        <input type="radio" name="emotion${loop.index}" value="4" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="emotion${loop.index}" value="5" />
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                         <span class="icon">★</span>
@@ -72,29 +73,29 @@
                 <!------------------------------------------ Eating rate display---------------------------------------->
                 <td><div class="rating">
                     <label>
-                        <input type="radio" name="eating-stars" value="1" />
+                        <input type="radio" name="eating${loop.index}" value="1" />
                         <span class="icon">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="eating-stars" value="2" />
-                        <span class="icon">★</span>
-                        <span class="icon">★</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="eating-stars" value="3" />
-                        <span class="icon">★</span>
+                        <input type="radio" name="eating${loop.index}" value="2" />
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="eating-stars" value="4" />
-                        <span class="icon">★</span>
+                        <input type="radio" name="eating${loop.index}" value="3" />
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="eating-stars" value="5" />
+                        <input type="radio" name="eating${loop.index}" value="4" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="eating${loop.index}" value="5" />
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                         <span class="icon">★</span>
@@ -105,29 +106,29 @@
                 <!---------------------------------------- Sleeping rate display------------------------------->
                 <td><div class="rating">
                     <label>
-                        <input type="radio" name="sleeping-stars" value="1" />
+                        <input type="radio" name="sleeping${loop.index}" value="1" />
                         <span class="icon">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="sleeping-stars" value="2" />
-                        <span class="icon">★</span>
-                        <span class="icon">★</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="sleeping-stars" value="3" />
-                        <span class="icon">★</span>
+                        <input type="radio" name="sleeping${loop.index}" value="2" />
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="sleeping-stars" value="4" />
-                        <span class="icon">★</span>
+                        <input type="radio" name="sleeping${loop.index}" value="3" />
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="sleeping-stars" value="5" />
+                        <input type="radio" name="sleeping${loop.index}" value="4" />
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                        <span class="icon">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="sleeping${loop.index}" value="5" />
                         <span class="icon">★</span>
                         <span class="icon">★</span>
                         <span class="icon">★</span>
@@ -135,9 +136,7 @@
                         <span class="icon">★</span>
                     </label>
                 </div></td>
-                <td><input type="submit" name="" value="Save" />
-            </td>
-            </form>
+
         </tr>
 
     </c:forEach>
@@ -146,6 +145,8 @@
     </c:forEach>
 
 </table>
+    <input type="submit" name="" value="Save" />
+</form>
 
 <%@include file="footer.jsp"%>
 </html>
