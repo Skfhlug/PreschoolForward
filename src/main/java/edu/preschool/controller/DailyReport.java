@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,17 +68,15 @@ public class DailyReport extends HttpServlet {
         //Get Report
         Report report = (Report) reportDao.findByPropertyEqual(student_report).get(0);
 
-        //Get teacher who update report
-        //User teacher = (User)
+        List<Report> reports;
+        reports = new ArrayList<>(reportDao.findByPropertyEqual(student_report));
 
         String output = "parent id: " + user_id + "\nStudent id:" + student_id;
-
         req.setAttribute("info", output);
         req.setAttribute("parent_id", user_id);
         req.setAttribute("student_id", student_id);
         req.setAttribute("student", student);
         req.setAttribute("report", report);
-
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/dailyReport.jsp");

@@ -12,6 +12,21 @@
             </form-login-config>
         </login-config>
         <!-- Protect the user search page. -->
+    <!--Only Admin-->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>search</web-resource-name>
+            <url-pattern>/user.jsp</url-pattern>
+            <url-pattern>/editStudentServlet</url-pattern>
+            <url-pattern>/editUserServlet</url-pattern>
+            <url-pattern>/addUserServlet</url-pattern>
+
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <!--Only Admin and teacher-->
         <security-constraint>
             <web-resource-collection>
                 <web-resource-name>search</web-resource-name>
@@ -21,16 +36,69 @@
                 <url-pattern>/searchUser</url-pattern>
                 <url-pattern>/student.jsp</url-pattern>
                 <url-pattern>/searchStudent</url-pattern>
+                <url-pattern>/addReport</url-pattern>
+                <url-pattern>/addParent</url-pattern>
+                <url-pattern>/addReminderServlet</url-pattern>
+                <url-pattern>/addRole</url-pattern>
+                <url-pattern>/addStudentServlet</url-pattern>
+                <url-pattern>/dailyAction</url-pattern>
+                <url-pattern>/dailyRateForm</url-pattern>
+
+                <url-pattern>/deleteParentStudentRelationship</url-pattern>
+                <url-pattern>/deleteUser</url-pattern>
+                <url-pattern>/editStudentServlet</url-pattern>
+                <url-pattern>/editUserServlet</url-pattern>
+                <url-pattern>/searchParent</url-pattern>
+                <url-pattern>/reminder</url-pattern>
+                <url-pattern>/searchStudent</url-pattern>
+                <url-pattern>/addParentDetail.jsp</url-pattern>
+                <url-pattern>/addParentSuccessful.jsp</url-pattern>
+                <url-pattern>/addReminder.jsp</url-pattern>
+                <url-pattern>/addRole.jsp</url-pattern>
+                <url-pattern>/addStudentSuccess.jsp</url-pattern>
+                <url-pattern>/dailyForm.jsp</url-pattern>
+                <url-pattern>/dailyRateForm.jsp</url-pattern>
+
+                <url-pattern>/editStudent.jsp</url-pattern>
+                <url-pattern>/editUser.jsp</url-pattern>
+                <url-pattern>/parent.jsp</url-pattern>
+                <url-pattern>/reminder.jsp</url-pattern>
+                <url-pattern>/selectRoom.jsp</url-pattern>
+                <url-pattern>/student.jsp</url-pattern>
+                <url-pattern>/studentRegister.jsp</url-pattern>
+                <url-pattern>/successfulAddingDailyReport.jsp</url-pattern>
+                <url-pattern>/user.jsp</url-pattern>
+
             </web-resource-collection>
             <auth-constraint>
                 <role-name>admin</role-name>
+                <role-name>teacher</role-name>
             </auth-constraint>
         </security-constraint>
+    <!--Only parent-->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>search</web-resource-name>
+            <url-pattern>/adminRegister.jsp</url-pattern>
+            <url-pattern>/welcomeAdmin.jsp</url-pattern>
+            <url-pattern>/user.jsp</url-pattern>
+            <url-pattern>/searchUser</url-pattern>
+            <url-pattern>/student.jsp</url-pattern>
+            <url-pattern>/searchStudent</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+            <role-name>teacher</role-name>
+        </auth-constraint>
+    </security-constraint>
+
 
         <security-constraint>
             <web-resource-collection>
                 <web-resource-name>parent</web-resource-name>
                 <url-pattern>/welcomeAdmin.jsp</url-pattern>
+                <url-pattern>/dailyReport</url-pattern>
+                <url-pattern>/dailyReport.jsp</url-pattern>
             </web-resource-collection>
             <auth-constraint>
                 <role-name>parent</role-name>
@@ -46,6 +114,19 @@
     <security-role>
         <role-name>parent</role-name>
     </security-role>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/403error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500error.jsp</location>
+    </error-page>
 
 </web-app>
 

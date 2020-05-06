@@ -28,7 +28,7 @@
             <li role="menuitem"><a href=index.jsp>Home</a></li>
             <li role="menuitem"><a href=gallery.jsp>Event Gallery</a></li>
             <li role="menuitem"><a href="resources.html">Resource</a></li>
-            <li role="menuitem"><a href="#">More <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
+            <li role="menuitem"><a href="#">More(admin only) <i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;</a>
                 <ul>
                     <li role="menuitem"><a href="studentRegister.jsp">Student Register</a></li>
                     <li role="menuitem"><a href="reminder?searchTerm=&searchType=id&submit=viewAll">Reminder</a></li>

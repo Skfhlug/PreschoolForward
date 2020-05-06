@@ -13,7 +13,6 @@
         <a href = "user.jsp"><button>User</button></a>
     </c:when>
     <c:when test="${(pageContext.request.isUserInRole('parent'))}">
-        <p class="usernameHeader">Welcome : <%= request.getRemoteUser()%></p>
         <a href = "dailyReport"><button>Student Report</button></a>
     </c:when>
 </c:choose>

@@ -29,6 +29,8 @@
     <h2>${student.first_name} ${student.last_name}</h2>
 
 <br><br>
+
+
     <h3 class="a">Emotion rate:</h3>
         <div class="emotion-block rating a">
             <c:choose>

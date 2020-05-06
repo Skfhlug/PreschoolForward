@@ -32,30 +32,6 @@ public class DailyAction extends HttpServlet {
     private List<Student> studentInClass;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
-        int student_id = Integer.parseInt(req.getParameter("studentID"));
-        int emotion_rate = Integer.parseInt(req.getParameter("emotion-stars"));
-        int eating_rate = Integer.parseInt(req.getParameter("emotion-stars"));
-        int sleeping_rate = Integer.parseInt(req.getParameter("emotion-stars"));
-
-
-        logger.info(student_id);
-
-
-
-        //RequestDispatcher dispatcher = req.getRequestDispatcher("searchParent?searchTerm=&searchType=id&submit=viewAll");
-        //dispatcher.forward(req, resp);
-
-
-        //RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
-        //dispatcher.forward(req, resp);
-    }
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -78,10 +54,6 @@ public class DailyAction extends HttpServlet {
         req.setAttribute("students", genericDao.findByPropertyEqual(studentGroup));
         req.setAttribute("date", todayDate);
         req.setAttribute("numberOfStudent", studentInClass.size());
-
-        for(int i=0; i<studentInClass.size(); i++) {
-
-        }
 
         //RequestDispatcher dispatcher = req.getRequestDispatcher("/dailyForm.jsp");
         RequestDispatcher dispatcher = req.getRequestDispatcher("/dailyRateForm.jsp");
