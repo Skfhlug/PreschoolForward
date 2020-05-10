@@ -9,10 +9,8 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+import java.io.File;
 import java.io.IOException;
 
 @WebServlet(
@@ -36,7 +34,7 @@ public class addStudentServlet extends HttpServlet {
         String grade = req.getParameter("grade");
         String emergency_phone1 = req.getParameter("emergency_phone1");
         String emergency_phone2 = req.getParameter("emergency_phone2");
-        //String picture_address = req.getParameter("picture_address");
+        String picture_address = req.getParameter("picture_address");
         String parent_status = req.getParameter("parent_status");
         String gender = req.getParameter("gender");
 
@@ -63,10 +61,9 @@ public class addStudentServlet extends HttpServlet {
         System.out.println("grade : " + grade);
         System.out.println("emergency phone1 : " + emergency_phone1);
         System.out.println("emergency phone2 : " + emergency_phone2);
-        System.out.println("picture address: " + "test");
+        System.out.println("picture address: " + picture_address);
         System.out.println("parent status: " + parent_status);
         System.out.println(("gender" + gender));
-
 
 
         GenericDao genericDao = new GenericDao(Student.class);
@@ -87,4 +84,5 @@ public class addStudentServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/searchStudent?searchTerm=&searchType=id&submit=viewAll");
         dispatcher.forward(req, resp);
     }
+
 }

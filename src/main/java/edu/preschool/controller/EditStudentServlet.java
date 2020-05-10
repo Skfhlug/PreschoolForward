@@ -40,8 +40,8 @@ public class EditStudentServlet extends HttpServlet {
         student.setAddress(request.getParameter("address"));
         student.setClass_room(request.getParameter("class_room"));
         student.setGrade(request.getParameter("grade"));
-        student.setEmergency_phone1(request.getParameter("phone1"));
-        student.setEmergency_phone2(request.getParameter("phone2"));
+        student.setEmergency_phone1(request.getParameter("emergency_phone1"));
+        student.setEmergency_phone2(request.getParameter("emergency_phone2"));
         student.setParent_status(request.getParameter("parent_status"));
 
         if(request.getRemoteUser().equals(request.getParameter("username")) || request.isUserInRole("admin")) {

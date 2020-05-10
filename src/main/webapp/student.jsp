@@ -16,7 +16,7 @@
     <title>Student</title>
 </head>
 <body>
-<h2>Student</h2> <a href="addUser.jsp"><button>Add Student</button></a>
+<h2>Student</h2> <a href="studentRegister.jsp"><button>Add Student</button></a>
 <form action="searchStudent" method="GET">
     <div class="form-group">
         <label>What are you looking for:</label>

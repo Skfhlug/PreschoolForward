@@ -43,4 +43,22 @@ In advance
        * Get confirmation from parent 
     - As a school manager, I want to have an rsvp function so parents can give us information.
 
+Resources:  
+ * MySQL Database 
+ * Hibernate5 ORM Framework
+ * Maven Dependency Management
+ * Git and GitHub version control
+ * IntelliJ IDEA 
+ 
+Language
+ * Java, JSP, JSTL
+ * HTML, CSS 
+ 
+Functions
+ * Login/out
+ * Register
+ * Add, Edit, Search, and Delete
+ * Display 
+ 
+
 Presentation link: https://docs.google.com/presentation/d/1KEy8LvCnLWbzcCFgUCFfD1WWZm7PbBxZ1_mrCJ6rmPI/edit#slide=id.p

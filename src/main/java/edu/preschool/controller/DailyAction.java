@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static sun.jvm.hotspot.gc.cms.AdaptiveFreeList.sizeOf;
+//import static sun.jvm.hotspot.gc.cms.AdaptiveFreeList.sizeOf;
 
 @WebServlet(
         name = "dailyAction",
