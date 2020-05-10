@@ -16,7 +16,7 @@ import java.util.Properties;
  * Created on 8/31/16.
  * @author pwaite
  * @author Alex M - Fall 2019 - added multi-line sql capability
- * @author  Jeanne - Modified
+ * @author  Suparin
  * @version 1.0
  * @since 05-10-2020
  */
