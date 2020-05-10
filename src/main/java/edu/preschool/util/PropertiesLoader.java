@@ -29,13 +29,18 @@ public interface PropertiesLoader {
         Properties properties = new Properties();
         try {
             properties.load(this.getClass().getResourceAsStream(propertiesFilePath));
+            logger.info("Display from loadProperites method.");
+            System.out.println("Display from loadProperites method.");
         } catch (IOException ioException) {
+
             logger.error(ioException);
             throw ioException;
         } catch (Exception exception) {
             logger.error(exception);
             throw exception;
         }
+        logger.info(properties);
+        System.out.println("properties: " + properties);
         return properties;
     }
 }

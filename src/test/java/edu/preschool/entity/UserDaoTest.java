@@ -1,7 +1,6 @@
 package edu.preschool.entity;
 
-import edu.preschool.entity.Reminder;
-import edu.preschool.entity.User;
+
 import edu.preschool.persitence.GenericDao;
 import edu.preschool.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,13 +8,14 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class UserDaoTest {
     GenericDao userDao;
     User user;
-/*
+
     @BeforeEach
     void setUp() {
 
@@ -33,8 +33,43 @@ public class UserDaoTest {
     }
     @Test
     void getAllUserSuccess(){
-        List<User> bkCategories = userDao.getAll();
-        assertEquals(17,bkCategories.size());
+        List<User> users = userDao.getAll();
+        assertEquals(3, users.size());
     }
-*/
+
+    @Test
+    void insertUserSuccess() {
+        User newUser = new User();
+        newUser.setId(4);
+        newUser.setFirst_name("TestInsert");
+        newUser.setLast_name("Test");
+        newUser.setUsername("usernameTest");
+        newUser.setPassword("123456789");
+        newUser.setPhone("1234567899");
+        newUser.setEmail("test@amail.com");
+
+        int user_id = userDao.insert(newUser);
+
+        assertNotEquals(0,user_id);
+        User addedUser = (User) userDao.getById(user_id);
+        assertEquals("TestInsert", addedUser.getFirst_name());
+
+    }
+    @Test
+    public void  testUpdate(){
+        String newFirstName = "editFirstName";
+        User updateUser = (User) userDao.getById(3);
+        updateUser.setFirst_name(newFirstName);
+        userDao.saveOrUpdate(updateUser);
+        User retrievedUser = (User) userDao.getById(3);
+        assertEquals(newFirstName, retrievedUser.getFirst_name());
+    }
+
+    @Test
+    public void deleteUserSuccess() {
+
+        userDao.delete(userDao.getById(2));
+        assertNull(userDao.getById(2));
+    }
+
 }

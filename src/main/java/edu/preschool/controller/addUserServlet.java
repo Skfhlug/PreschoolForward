@@ -36,7 +36,7 @@ public class addUserServlet extends HttpServlet {
 
 
         GenericDao genericDao = new GenericDao(User.class);
-        int id = genericDao.insert(user);;
+        int id = genericDao.insert(user);
 
 
         HttpSession session = request.getSession();
