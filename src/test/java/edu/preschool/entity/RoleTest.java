@@ -19,7 +19,6 @@ class RoleTest {
     @BeforeEach
     void setUp() {
 
-        User user = new User();
         roleDao = new GenericDao(Role.class);
         userDao = new GenericDao(User.class);
 
@@ -29,7 +28,7 @@ class RoleTest {
     @Test
     void getAllRoleSuccess(){
         List<Role> roles = roleDao.getAll();
-        assertEquals(2, roles.size());
+        assertEquals(5, roles.size());
     }
 
     @Test
@@ -40,8 +39,6 @@ class RoleTest {
     }
     @Test
     void insertRoleSuccess() {
-        //Get user to add to username
-
 
         Role newRole = new Role();
         newRole.setId(1);
@@ -66,7 +63,7 @@ class RoleTest {
     }
 
     @Test
-    public void deleteUserSuccess() {
+    public void deleteRoleSuccess() {
 
         roleDao.delete(roleDao.getById(2));
         assertNull(roleDao.getById(2));
