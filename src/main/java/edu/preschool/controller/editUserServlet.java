@@ -20,17 +20,12 @@ import java.io.IOException;
 )
 public class editUserServlet extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    private GenericDao genericDao;
-    private GenericDao userDao;
-    @Override
-    public void init() throws ServletException {
-        userDao = new GenericDao(User.class);
 
-    }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        GenericDao genericDao = new GenericDao(User.class);;
+        GenericDao userDao= new GenericDao(User.class);;
         int id = Integer.parseInt(request.getParameter("id"));
         logger.info("Editing user data\n User ID:" + id);
 
@@ -55,8 +50,7 @@ public class editUserServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        GenericDao dao = new GenericDao(User.class);
+        GenericDao userDao= new GenericDao(User.class);
         User user = new User();
 
 

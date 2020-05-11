@@ -48,7 +48,7 @@ public class addStudentServlet extends HttpServlet {
         student.setGrade(grade);
         student.setEmergency_phone1(emergency_phone1);
         student.setEmergency_phone2(emergency_phone2);
-        student.setPicture_address("test");
+        student.setPicture_address(picture_address);
         student.setParent_status(parent_status);
         student.setGender(gender);
 
@@ -74,14 +74,15 @@ public class addStudentServlet extends HttpServlet {
         session.setAttribute("added_username", req.getParameter("username"));
 
         String successMessage;
-        String studentAddedDetail = "New user was added"
+        String studentAddedDetail = "New Studnet was added"
                 + "\nID : " + id
                 + "\nFirst Name: " + req.getParameter("first_name")
                 + "\nLast Name: " + req.getParameter("last_name");
         session.setAttribute("studentAdded", studentAddedDetail);
+        req.setAttribute("students", genericDao.getAll());
         logger.info("Add new student \nstudent id = " + id);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/searchStudent?searchTerm=&searchType=id&submit=viewAll");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("addStudentSuccess.jsp");
         dispatcher.forward(req, resp);
     }
 

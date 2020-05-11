@@ -29,12 +29,12 @@ import java.util.Map;
         urlPatterns = { "/dailyAction" }
 )
 public class DailyAction extends HttpServlet {
-    private List<Student> studentInClass;
+
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        List<Student> studentInClass;
         LocalDate todayDate = LocalDate.now();
         String student_class = req.getParameter("student_class");
         String student_grade = req.getParameter("student_grade");

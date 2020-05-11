@@ -28,6 +28,7 @@ class ParentTest {
         database.runSQL("cleandb.sql");
     }
 
+
     @Test
     void getId() {
         Parent retrievedParent = (Parent) parentDao.getById(2);

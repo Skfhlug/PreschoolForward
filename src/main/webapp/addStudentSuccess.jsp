@@ -44,26 +44,11 @@
                 <td>${student.address}</td>
                 <td>${student.class_room}</td>
                 <td>${student.grade}</td>
-                <td>${student.emergency_phone1}</td>
-                <td>${student.emergency_phone2}</td>
+                <td><a href="tel:${student.emergency_phone1}">${student.emergency_phone1}</a></td>
+                <td><a href="tel:${student.emergency_phone1}">${student.emergency_phone2}</a></td>
                 <td>${student.parent_status}</td>
             </tr>
         </c:forEach>
-        <c:forEach var="foundList" items="${resultList}">
-            <tr>
-                <td>${foundList.id}</td>
-                <td>${foundList.first_name}</td>
-                <td>${foundList.middle_name}</td>
-                <td>${foundList.last_name}</td>
-                <td>${foundList.address}</td>
-                <td>${foundList.class_room}</td>
-                <td>${foundList.grade}</td>
-                <td>${foundList.emergency_phone1}</td>
-                <td>${foundList.emergency_phone2}</td>
-                <td>${foundList.parent_status}</td>
-            </tr>
-        </c:forEach>
-
     </table>
     </div>
 </div>

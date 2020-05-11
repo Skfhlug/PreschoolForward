@@ -47,8 +47,8 @@
                 <td>${user.first_name}</td>
                 <td>${user.last_name}</td>
                 <td>${user.username}</td>
-                <td>${user.email}</td>
-                <td>${user.phone}</td>
+                <td><a href="mailto:${foundList.email}">${user.email}</a></td>
+                <td><a href="tel:</a>${foundList.phone}">${user.phone}</a></td>
                 <td><a  href="editUserServlet?editID=${user.id}">edit</a></td>
                 <td><a  href="deleteUser?deleteID=${user.id}">delete</a></td>
             </tr>
@@ -59,8 +59,8 @@
                 <td>${foundList.first_name}</td>
                 <td>${foundList.last_name}</td>
                 <td>${foundList.username}</td>
-                <td>${foundList.email}</td>
-                <td>${foundList.phone}</td>
+                <td><a href="mailto:${foundList.email}">${foundList.email}</a></td>
+                <td><a href="tel:</a>${foundList.phone}">${foundList.phone}</a></td>
                 <td><a href="editUserServlet?editID=${user.id}">edit</a></td>
                 <td><a  href="deleteUser?deleteID=${user.id}">delete</a></td>
             </tr>

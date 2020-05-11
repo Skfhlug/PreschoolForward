@@ -40,3 +40,19 @@
 [ERROR] 2020-05-10 17:11:08.041 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`preschoolforward_test`.`parent`, CONSTRAINT `Parent_Parent` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
 [ERROR] 2020-05-10 17:11:10.600 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`preschoolforward_test`.`parent`, CONSTRAINT `Parent_Parent` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
 [ERROR] 2020-05-10 17:11:10.658 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`preschoolforward_test`.`parent`, CONSTRAINT `Parent_Parent` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+[INFO ] 2020-05-10 20:25:28.995 [http-nio-8080-exec-9] EditStudentServlet - Editing Student data
+Student ID:13
+[INFO ] 2020-05-10 20:26:35.043 [http-nio-8080-exec-5] addStudentServlet - AddStudentServlet is working
+[INFO ] 2020-05-10 20:26:35.089 [http-nio-8080-exec-5] addStudentServlet - Add new student 
+student id = 14
+[INFO ] 2020-05-10 20:30:15.778 [http-nio-8080-exec-3] addStudentServlet - AddStudentServlet is working
+[INFO ] 2020-05-10 20:30:15.845 [http-nio-8080-exec-3] addStudentServlet - Add new student 
+student id = 15
+[INFO ] 2020-05-10 20:33:28.817 [http-nio-8080-exec-7] addStudentServlet - AddStudentServlet is working
+[INFO ] 2020-05-10 20:33:33.159 [http-nio-8080-exec-7] addStudentServlet - Add new student 
+student id = 16
+[INFO ] 2020-05-10 20:40:07.682 [http-nio-8080-exec-6] addStudentServlet - AddStudentServlet is working
+[INFO ] 2020-05-10 20:40:12.018 [http-nio-8080-exec-6] addStudentServlet - Add new student 
+student id = 17
+[INFO ] 2020-05-10 20:48:47.330 [http-nio-8080-exec-8] editUserServlet - Editing user data
+ User ID:1

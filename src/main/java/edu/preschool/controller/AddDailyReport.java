@@ -19,15 +19,28 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
-
+/**
+ *  This class in addDailyReport detail into database
+ *
+ *@author    Suparin Fhlug
+ */
 @WebServlet(
         name = "addReport",
         urlPatterns = { "/addReport" }
 )
+/***
+ * This
+ */
 public class AddDailyReport extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-
+    /**
+     * Get rate studentID, Emotion rate, Eating rate, sleeping rate, todaydate, user id and add to the report table;
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

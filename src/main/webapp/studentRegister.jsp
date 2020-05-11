@@ -66,7 +66,7 @@
             </div>
             <div class="form-group">
                 <label>Picture Address:</label>
-                <input type="file" name="picture_address" class="form-control" placeholder="xxxx.png"/>
+                <input type="text" name="picture_address" class="form-control" placeholder="xxxx.png"/>
             </div>
             <div class="form-group">
                     <label>marital Status </label><br>

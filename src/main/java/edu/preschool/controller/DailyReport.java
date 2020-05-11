@@ -27,21 +27,14 @@ import java.util.Map;
         urlPatterns = { "/dailyReport" }
 )
 public class DailyReport extends HttpServlet {
-    private GenericDao reportDao;
-    private GenericDao userDao;
-    private GenericDao parentDao;
-    private GenericDao studentDao;
 
-    @Override
-    public void init() throws ServletException {
-        reportDao =  new GenericDao(Report.class);
-        userDao = new GenericDao(User.class);
-        parentDao = new GenericDao(Parent.class);
-        studentDao = new GenericDao(Student.class);
-    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        GenericDao reportDao =  new GenericDao(Report.class);
+        GenericDao userDao = new GenericDao(User.class);
+        GenericDao parentDao = new GenericDao(Parent.class);
+        GenericDao studentDao = new GenericDao(Student.class);;
 
         String parent_username = req.getRemoteUser();
         //Get user id
