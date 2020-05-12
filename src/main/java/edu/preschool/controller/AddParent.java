@@ -27,8 +27,6 @@ public class AddParent extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //User user = new User();
-        //Student student = new Student();
         Parent parent = new Parent();
 
         int user_id = Integer.parseInt(req.getParameter("user_id"));
@@ -53,14 +51,9 @@ public class AddParent extends HttpServlet {
 
         HttpSession session = req.getSession();
         session.setAttribute("addedParent", addedMessage);
-        req.setAttribute("users",user);
-        req.setAttribute("students", student);
-
-        //RequestDispatcher dispatcher = req.getRequestDispatcher("searchParent?searchTerm=&searchType=id&submit=viewAll");
-        //dispatcher.forward(req, resp);
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/searchParent?searchTerm=&searchType=id&submit=viewAll");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("addParentSuccessful.jsp");
         dispatcher.forward(req, resp);
     }
 }

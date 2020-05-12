@@ -14,10 +14,14 @@
 
 
 <body>
+<c:if test="${addedParent != null}" >
+    <p class="addStatus">${addedParent}</p>
+    <c:set var="addedParent"  scope="session" />
+    <c:remove var="addedParent"/>
+</c:if>
 
-<c:forEach var="student" items="${users}">
-        <p>${user.first_name} ${user.last_name} is a parent of ${student.first_name} ${student.last_name} </p>
-</c:forEach>
+
+<p>Parent was added</p>
 </body>
 <%@include file="footer.jsp"%>
 

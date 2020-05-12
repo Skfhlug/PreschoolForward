@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * The type Logout.
@@ -15,19 +16,18 @@ import javax.servlet.http.HttpServletResponse;
  * @since 2020-03-02
  */
 @WebServlet(
-        name = "logoutServlet"
-        , urlPatterns = {"/logout"}
-        )
+    urlPatterns = {"/logout"}
+    )
 public class logout extends HttpServlet{
+    @Override
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
         request.getSession().invalidate();
-        //response.sendRedirect(request.getContextPath());
-        //response.sendRedirect("/PreschoolForward/");
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-        dispatcher.forward(request, response);
+
+        response.sendRedirect(request.getContextPath() + "/PreschoolForward/index.jsp");
     }
 }

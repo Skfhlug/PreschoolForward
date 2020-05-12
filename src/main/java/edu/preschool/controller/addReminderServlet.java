@@ -3,6 +3,7 @@ package edu.preschool.controller;
 import edu.preschool.entity.Reminder;
 import edu.preschool.entity.User;
 import edu.preschool.persitence.GenericDao;
+import org.graalvm.compiler.lir.LIRInstruction;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -33,13 +35,19 @@ public class addReminderServlet extends HttpServlet {
         System.out.println("userID = " + userId);
 
         GenericDao genericDao = new GenericDao(Reminder.class);
-        Reminder reminder = new Reminder(title, description, userId, status);
+        Reminder reminders = new Reminder();
+        reminders.setId(1);
+        reminders.setReminder_title(title);
+        reminders.setDescription(description);
+        reminders.setStatus(status);
 
+        GenericDao userDao = new GenericDao(User.class);
+        String username = req.getRemoteUser();
+        User users = (User) userDao.getByPropertyLike("username", username).get(0);
+        reminders.setUser(users);
+        int reminder_id = genericDao.insert(reminders);
 
-        int successMessages;
-        successMessages = genericDao.insert(reminder);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/reminder.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/reminder?searchTerm=&searchType=id&submit=viewAll");
         dispatcher.forward(req, resp);
     }
 }

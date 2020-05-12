@@ -20,7 +20,7 @@
             <c:set var="studentAdded"  scope="session" />
             <c:remove var="studentAdded"/>
         </c:if>
-
+        <a href = "searchParent?searchTerm=&searchType=id&submit=viewAll"><button>Go to Parent Page</button></a>
     <table class="studentTable">
         <tr>
             <th>ID</th>

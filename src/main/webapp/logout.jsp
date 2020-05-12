@@ -15,7 +15,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     session.invalidate();
-    response.sendRedirect("/index.jsp");
+    response.sendRedirect("http://localhost:8080/PreschoolForward/");
 %>
 <%@include file="footer.jsp"%>
 </body>

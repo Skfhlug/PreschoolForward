@@ -18,20 +18,21 @@
 <div class="dailyReport">
 
 
-    <!--/*
-        <h1>${info}</h1>
-        <p>Parent Id: ${parent_id}</p>
-        <p>Student ID : ${student.id}</p>
-        <h2>${student.first_name} ${student.last_name}</h2> <p class="dateRight">${date}</p>
-
-    */-->
     <h1 class="dateReport">Daily Report date: ${date}</h1>
-    <h2>${student.first_name} ${student.last_name}</h2>
+    <h2 class="studentNameInReport">${student.first_name} ${student.last_name}</h2>
+    <br>
+    <c:if test = "${reminders.status == 'display'}">
+        <br><br>
+        <p style="font-weight: bold;">${reminders.reminder_title}</p>
+        <p>${reminders.description}</p>
+    </c:if>
+
+    <div class="studentPic"><img src="img/${student.picture_address}"/></div>
 
 <br><br>
 
 
-    <h3 class="a">Emotion rate:</h3>
+    <h3 class="d">Emotion rate: </h3>
         <div class="emotion-block rating a">
             <c:choose>
                 <c:when test="${report.emotion == 1}">

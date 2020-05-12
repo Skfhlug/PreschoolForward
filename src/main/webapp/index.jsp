@@ -7,13 +7,13 @@
 <c:choose>
     <c:when test="${(pageContext.request.isUserInRole('admin')) ||
                                     (pageContext.request.isUserInRole('teacher')) }">
-        <p>Welcome : <%= request.getRemoteUser()%></p>
-        <a href = "student.jsp"><button>Student</button></a>
-        <a href = "reminder.jsp"><button>Reminder</button></a>
-        <a href = "user.jsp"><button>User</button></a>
+
+        <a href = "searchStudent?searchTerm=&searchType=id&submit=viewAll" class="longbutton">Student</a>
+        <a href = "reminder?searchTerm=&searchType=id&submit=viewAll" class="longbuttonDif">Reminder</a>
+        <a href = "searchUser?searchTerm=&searchType=id&submit=viewAll" class="longbutton">User</a>
     </c:when>
     <c:when test="${(pageContext.request.isUserInRole('parent'))}">
-        <a href = "dailyReport"><button>Student Report</button></a>
+        <a href = "dailyReport" class="longbutton">Student Report</a>
     </c:when>
 </c:choose>
 

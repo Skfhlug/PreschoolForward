@@ -491,15 +491,58 @@ Daily Report
     margin-left: 200px;
     margin-bottom: 20px;
 }
-.dateReport {
-    margin-bottom: 3em;
-}
-span.a{
+
+span.d{
     display: inline;
 }
 span.b{
-    display: inline;
-}
+     display: inline;
+ }
 span.c{
     display: inline;
+}
+.studentPic {
+    float: right;
+    text-align: right;
+}
+/***********
+Student name in report
+ **************/
+
+.studentNameInReport {
+    color: #208072;
+
+}
+
+/**********
+button in index
+*********/
+.longbutton {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #7272f2;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.longbuttonDif {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #f86642;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.longbutton:hover, .longbuttonDif:hover {
+    background-color: #ddd;
+    color: black;
 }

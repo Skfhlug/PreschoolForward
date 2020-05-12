@@ -56,3 +56,119 @@ student id = 16
 student id = 17
 [INFO ] 2020-05-10 20:48:47.330 [http-nio-8080-exec-8] editUserServlet - Editing user data
  User ID:1
+[INFO ] 2020-05-10 20:54:57.556 [http-nio-8080-exec-9] DailyRateForm - student id: 1
+[INFO ] 2020-05-10 20:54:57.556 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion0  emotion rate: 5
+[INFO ] 2020-05-10 20:54:57.556 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating0  eating rate: 5
+[INFO ] 2020-05-10 20:54:57.556 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping0  sleeping rate: 5
+[INFO ] 2020-05-10 20:54:57.593 [http-nio-8080-exec-9] DailyRateForm - student id: 2
+[INFO ] 2020-05-10 20:54:57.593 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion1  emotion rate: 4
+[INFO ] 2020-05-10 20:54:57.593 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating1  eating rate: 4
+[INFO ] 2020-05-10 20:54:57.593 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping1  sleeping rate: 5
+[INFO ] 2020-05-10 20:54:57.600 [http-nio-8080-exec-9] DailyRateForm - student id: 5
+[INFO ] 2020-05-10 20:54:57.600 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion2  emotion rate: 3
+[INFO ] 2020-05-10 20:54:57.600 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating2  eating rate: 4
+[INFO ] 2020-05-10 20:54:57.600 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping2  sleeping rate: 5
+[INFO ] 2020-05-10 20:54:57.618 [http-nio-8080-exec-9] DailyRateForm - student id: 13
+[INFO ] 2020-05-10 20:54:57.618 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion3  emotion rate: 5
+[INFO ] 2020-05-10 20:54:57.618 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating3  eating rate: 5
+[INFO ] 2020-05-10 20:54:57.618 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping3  sleeping rate: 5
+[INFO ] 2020-05-10 20:54:57.631 [http-nio-8080-exec-9] DailyRateForm - student id: 14
+[INFO ] 2020-05-10 20:54:57.631 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion4  emotion rate: 4
+[INFO ] 2020-05-10 20:54:57.631 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating4  eating rate: 4
+[INFO ] 2020-05-10 20:54:57.631 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping4  sleeping rate: 5
+[INFO ] 2020-05-10 20:54:57.639 [http-nio-8080-exec-9] DailyRateForm - student id: 15
+[INFO ] 2020-05-10 20:54:57.639 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion5  emotion rate: 4
+[INFO ] 2020-05-10 20:54:57.639 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating5  eating rate: 3
+[INFO ] 2020-05-10 20:54:57.639 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping5  sleeping rate: 3
+[INFO ] 2020-05-10 21:19:46.670 [http-nio-8080-exec-3] addUserServlet - Added user
+[INFO ] 2020-05-10 21:26:05.572 [http-nio-8080-exec-10] EditStudentServlet - Editing Student data
+Student ID:9
+[INFO ] 2020-05-10 21:26:35.297 [http-nio-8080-exec-7] DailyRateForm - student id: 1
+[INFO ] 2020-05-10 21:26:35.297 [http-nio-8080-exec-7] DailyRateForm - emotionInput name: emotion0  emotion rate: 5
+[INFO ] 2020-05-10 21:26:35.297 [http-nio-8080-exec-7] DailyRateForm - eatingInput name: eating0  eating rate: 4
+[INFO ] 2020-05-10 21:26:35.297 [http-nio-8080-exec-7] DailyRateForm - sleepingInput name: sleeping0  sleeping rate: 5
+[INFO ] 2020-05-10 21:26:35.324 [http-nio-8080-exec-7] DailyRateForm - student id: 2
+[INFO ] 2020-05-10 21:26:35.324 [http-nio-8080-exec-7] DailyRateForm - emotionInput name: emotion1  emotion rate: 4
+[INFO ] 2020-05-10 21:26:35.324 [http-nio-8080-exec-7] DailyRateForm - eatingInput name: eating1  eating rate: 4
+[INFO ] 2020-05-10 21:26:35.324 [http-nio-8080-exec-7] DailyRateForm - sleepingInput name: sleeping1  sleeping rate: 4
+[INFO ] 2020-05-10 21:26:35.332 [http-nio-8080-exec-7] DailyRateForm - student id: 5
+[INFO ] 2020-05-10 21:26:35.332 [http-nio-8080-exec-7] DailyRateForm - emotionInput name: emotion2  emotion rate: 5
+[INFO ] 2020-05-10 21:26:35.332 [http-nio-8080-exec-7] DailyRateForm - eatingInput name: eating2  eating rate: 5
+[INFO ] 2020-05-10 21:26:35.332 [http-nio-8080-exec-7] DailyRateForm - sleepingInput name: sleeping2  sleeping rate: 5
+[INFO ] 2020-05-10 21:26:35.350 [http-nio-8080-exec-7] DailyRateForm - student id: 9
+[INFO ] 2020-05-10 21:26:35.350 [http-nio-8080-exec-7] DailyRateForm - emotionInput name: emotion3  emotion rate: 5
+[INFO ] 2020-05-10 21:26:35.350 [http-nio-8080-exec-7] DailyRateForm - eatingInput name: eating3  eating rate: 3
+[INFO ] 2020-05-10 21:26:35.350 [http-nio-8080-exec-7] DailyRateForm - sleepingInput name: sleeping3  sleeping rate: 3
+[INFO ] 2020-05-10 21:26:35.363 [http-nio-8080-exec-7] DailyRateForm - student id: 13
+[INFO ] 2020-05-10 21:26:35.363 [http-nio-8080-exec-7] DailyRateForm - emotionInput name: emotion4  emotion rate: 4
+[INFO ] 2020-05-10 21:26:35.363 [http-nio-8080-exec-7] DailyRateForm - eatingInput name: eating4  eating rate: 5
+[INFO ] 2020-05-10 21:26:35.363 [http-nio-8080-exec-7] DailyRateForm - sleepingInput name: sleeping4  sleeping rate: 5
+[INFO ] 2020-05-10 21:26:35.370 [http-nio-8080-exec-7] DailyRateForm - student id: 14
+[INFO ] 2020-05-10 21:26:35.370 [http-nio-8080-exec-7] DailyRateForm - emotionInput name: emotion5  emotion rate: 1
+[INFO ] 2020-05-10 21:26:35.370 [http-nio-8080-exec-7] DailyRateForm - eatingInput name: eating5  eating rate: 4
+[INFO ] 2020-05-10 21:26:35.370 [http-nio-8080-exec-7] DailyRateForm - sleepingInput name: sleeping5  sleeping rate: 4
+[INFO ] 2020-05-10 21:26:35.377 [http-nio-8080-exec-7] DailyRateForm - student id: 15
+[INFO ] 2020-05-10 21:26:35.377 [http-nio-8080-exec-7] DailyRateForm - emotionInput name: emotion6  emotion rate: 5
+[INFO ] 2020-05-10 21:26:35.377 [http-nio-8080-exec-7] DailyRateForm - eatingInput name: eating6  eating rate: 5
+[INFO ] 2020-05-10 21:26:35.377 [http-nio-8080-exec-7] DailyRateForm - sleepingInput name: sleeping6  sleeping rate: 4
+[INFO ] 2020-05-10 21:26:58.269 [http-nio-8080-exec-2] addUserServlet - Added user
+[INFO ] 2020-05-10 21:34:25.987 [http-nio-8080-exec-8] addUserServlet - Added user
+[INFO ] 2020-05-10 21:43:06.633 [http-nio-8080-exec-9] addUserServlet - Added user
+[INFO ] 2020-05-10 21:44:39.377 [http-nio-8080-exec-9] DailyRateForm - student id: 1
+[INFO ] 2020-05-10 21:44:39.377 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion0  emotion rate: 5
+[INFO ] 2020-05-10 21:44:39.377 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating0  eating rate: 4
+[INFO ] 2020-05-10 21:44:39.377 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping0  sleeping rate: 3
+[INFO ] 2020-05-10 21:44:39.386 [http-nio-8080-exec-9] DailyRateForm - student id: 2
+[INFO ] 2020-05-10 21:44:39.386 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion1  emotion rate: 5
+[INFO ] 2020-05-10 21:44:39.386 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating1  eating rate: 4
+[INFO ] 2020-05-10 21:44:39.386 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping1  sleeping rate: 5
+[INFO ] 2020-05-10 21:44:39.392 [http-nio-8080-exec-9] DailyRateForm - student id: 5
+[INFO ] 2020-05-10 21:44:39.392 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion2  emotion rate: 5
+[INFO ] 2020-05-10 21:44:39.392 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating2  eating rate: 4
+[INFO ] 2020-05-10 21:44:39.392 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping2  sleeping rate: 3
+[INFO ] 2020-05-10 21:44:39.399 [http-nio-8080-exec-9] DailyRateForm - student id: 9
+[INFO ] 2020-05-10 21:44:39.399 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion3  emotion rate: 5
+[INFO ] 2020-05-10 21:44:39.399 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating3  eating rate: 4
+[INFO ] 2020-05-10 21:44:39.399 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping3  sleeping rate: 5
+[INFO ] 2020-05-10 21:44:39.425 [http-nio-8080-exec-9] DailyRateForm - student id: 13
+[INFO ] 2020-05-10 21:44:39.425 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion4  emotion rate: 5
+[INFO ] 2020-05-10 21:44:39.425 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating4  eating rate: 4
+[INFO ] 2020-05-10 21:44:39.425 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping4  sleeping rate: 5
+[INFO ] 2020-05-10 21:44:39.431 [http-nio-8080-exec-9] DailyRateForm - student id: 14
+[INFO ] 2020-05-10 21:44:39.431 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion5  emotion rate: 5
+[INFO ] 2020-05-10 21:44:39.431 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating5  eating rate: 4
+[INFO ] 2020-05-10 21:44:39.431 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping5  sleeping rate: 5
+[INFO ] 2020-05-10 21:44:39.436 [http-nio-8080-exec-9] DailyRateForm - student id: 15
+[INFO ] 2020-05-10 21:44:39.436 [http-nio-8080-exec-9] DailyRateForm - emotionInput name: emotion6  emotion rate: 5
+[INFO ] 2020-05-10 21:44:39.436 [http-nio-8080-exec-9] DailyRateForm - eatingInput name: eating6  eating rate: 4
+[INFO ] 2020-05-10 21:44:39.436 [http-nio-8080-exec-9] DailyRateForm - sleepingInput name: sleeping6  sleeping rate: 5
+[INFO ] 2020-05-10 21:59:43.108 [http-nio-8080-exec-10] addUserServlet - Added user
+[INFO ] 2020-05-10 22:12:44.480 [http-nio-8080-exec-5] addUserServlet - Added user
+[INFO ] 2020-05-11 21:06:39.720 [http-nio-8080-exec-10] DailyRateForm - student id: 1
+[INFO ] 2020-05-11 21:06:39.720 [http-nio-8080-exec-10] DailyRateForm - emotionInput name: emotion0  emotion rate: 5
+[INFO ] 2020-05-11 21:06:39.720 [http-nio-8080-exec-10] DailyRateForm - eatingInput name: eating0  eating rate: 4
+[INFO ] 2020-05-11 21:06:39.720 [http-nio-8080-exec-10] DailyRateForm - sleepingInput name: sleeping0  sleeping rate: 4
+[INFO ] 2020-05-11 21:06:39.787 [http-nio-8080-exec-10] DailyRateForm - student id: 2
+[INFO ] 2020-05-11 21:06:39.787 [http-nio-8080-exec-10] DailyRateForm - emotionInput name: emotion1  emotion rate: 5
+[INFO ] 2020-05-11 21:06:39.787 [http-nio-8080-exec-10] DailyRateForm - eatingInput name: eating1  eating rate: 5
+[INFO ] 2020-05-11 21:06:39.787 [http-nio-8080-exec-10] DailyRateForm - sleepingInput name: sleeping1  sleeping rate: 5
+[INFO ] 2020-05-11 21:06:39.799 [http-nio-8080-exec-10] DailyRateForm - student id: 5
+[INFO ] 2020-05-11 21:06:39.799 [http-nio-8080-exec-10] DailyRateForm - emotionInput name: emotion2  emotion rate: 4
+[INFO ] 2020-05-11 21:06:39.799 [http-nio-8080-exec-10] DailyRateForm - eatingInput name: eating2  eating rate: 5
+[INFO ] 2020-05-11 21:06:39.799 [http-nio-8080-exec-10] DailyRateForm - sleepingInput name: sleeping2  sleeping rate: 4
+[INFO ] 2020-05-11 21:06:39.819 [http-nio-8080-exec-10] DailyRateForm - student id: 9
+[INFO ] 2020-05-11 21:06:39.819 [http-nio-8080-exec-10] DailyRateForm - emotionInput name: emotion3  emotion rate: 4
+[INFO ] 2020-05-11 21:06:39.819 [http-nio-8080-exec-10] DailyRateForm - eatingInput name: eating3  eating rate: 5
+[INFO ] 2020-05-11 21:06:39.819 [http-nio-8080-exec-10] DailyRateForm - sleepingInput name: sleeping3  sleeping rate: 5
+[INFO ] 2020-05-11 21:06:39.830 [http-nio-8080-exec-10] DailyRateForm - student id: 13
+[INFO ] 2020-05-11 21:06:39.830 [http-nio-8080-exec-10] DailyRateForm - emotionInput name: emotion4  emotion rate: 5
+[INFO ] 2020-05-11 21:06:39.830 [http-nio-8080-exec-10] DailyRateForm - eatingInput name: eating4  eating rate: 4
+[INFO ] 2020-05-11 21:06:39.830 [http-nio-8080-exec-10] DailyRateForm - sleepingInput name: sleeping4  sleeping rate: 4
+[INFO ] 2020-05-11 21:06:39.838 [http-nio-8080-exec-10] DailyRateForm - student id: 14
+[INFO ] 2020-05-11 21:06:39.838 [http-nio-8080-exec-10] DailyRateForm - emotionInput name: emotion5  emotion rate: 5
+[INFO ] 2020-05-11 21:06:39.838 [http-nio-8080-exec-10] DailyRateForm - eatingInput name: eating5  eating rate: 5
+[INFO ] 2020-05-11 21:06:39.838 [http-nio-8080-exec-10] DailyRateForm - sleepingInput name: sleeping5  sleeping rate: 5
+[INFO ] 2020-05-11 21:06:39.865 [http-nio-8080-exec-10] DailyRateForm - student id: 15
+[INFO ] 2020-05-11 21:06:39.865 [http-nio-8080-exec-10] DailyRateForm - emotionInput name: emotion6  emotion rate: 5
+[INFO ] 2020-05-11 21:06:39.865 [http-nio-8080-exec-10] DailyRateForm - eatingInput name: eating6  eating rate: 5
+[INFO ] 2020-05-11 21:06:39.865 [http-nio-8080-exec-10] DailyRateForm - sleepingInput name: sleeping6  sleeping rate: 5

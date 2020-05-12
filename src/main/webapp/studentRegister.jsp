@@ -50,8 +50,8 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label>Grade  </label><br>
-                    <label><input type="radio" class="radio" name="grade" value="junior" checked>Junior  </label>
-                    <label><input type="radio" class="radio" name="grade" value="senior" >Senior  </label>
+                    <label><input type="radio" class="radio" name="grade" value="Junior" checked>Junior  </label>
+                    <label><input type="radio" class="radio" name="grade" value="Senior" >Senior  </label>
                 </div>
             </div>
             <div class="form-row">

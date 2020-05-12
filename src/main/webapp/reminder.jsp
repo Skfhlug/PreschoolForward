@@ -30,9 +30,10 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>Description</th>
-                <th>User ID</th>
                 <th>User Username</th>
                 <th>Display Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
 
         <c:forEach var="reminder" items="${resultList}">
@@ -40,9 +41,11 @@
                 <td>${reminder.id}</td>
                 <td>${reminder.reminder_title}</td>
                 <td>${reminder.description}</td>
-                <td>${reminder.user.id}</td>
+
                 <td>${reminder.user.username}</td>
                 <td>${reminder.status}</td>
+                <td><a  href="editReminder?editID=${reminder.id}">edit</a></td>
+                <td><a  href="deleteReminder?deleteID=${reminder.id}">delete</a></td>
             </tr>
         </c:forEach>
         <c:forEach var="reminder" items="${reminders}">
@@ -50,9 +53,10 @@
                 <td>${reminder.id}</td>
                 <td>${reminder.reminder_title}</td>
                 <td>${reminder.description}</td>
-                <td>${reminder.user.id}</td>
                 <td>${reminder.user.username}</td>
                 <td>${reminder.status}</td>
+                <td><a  href="editReminder?editID=${reminder.id}">edit</a></td>
+                <td><a  href="deleteReminder?deleteID=${reminder.id}">delete</a></td>
             </tr>
         </c:forEach>
     </table>
