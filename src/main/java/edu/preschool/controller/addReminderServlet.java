@@ -3,7 +3,7 @@ package edu.preschool.controller;
 import edu.preschool.entity.Reminder;
 import edu.preschool.entity.User;
 import edu.preschool.persitence.GenericDao;
-import org.graalvm.compiler.lir.LIRInstruction;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -47,7 +47,7 @@ public class addReminderServlet extends HttpServlet {
         reminders.setUser(users);
         int reminder_id = genericDao.insert(reminders);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/reminder?searchTerm=&searchType=id&submit=viewAll");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/reminder.jsp");
         dispatcher.forward(req, resp);
     }
 }

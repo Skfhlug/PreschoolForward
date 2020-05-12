@@ -80,7 +80,7 @@ class StudentTest {
     @Test
     public void deleteUserSuccess() {
 
-        genericDao.delete(genericDao.getById(2));
-        assertNull(genericDao.getById(2));
+        genericDao.delete(genericDao.getById(5));
+        assertNull(genericDao.getById(5));
     }
 }

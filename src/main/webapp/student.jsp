@@ -62,7 +62,7 @@
                 <td>${student.class_room}</td>
                 <td>${student.grade}</td>
                 <td><a href="tel:${student.emergency_phone1}">${student.emergency_phone1}</a></td>
-                <td><a href="tel:${student.emergency_phone1}">${student.emergency_phone2}</a></td>
+                <td><a href="tel:${student.emergency_phone2}">${student.emergency_phone2}</a></td>
                 <td>${student.parent_status}</td>
                 <td><a  href="editStudentServlet?editID=${student.id}">edit</a></td>
                 <td><a  href="deleteStudent?deleteID=${student.id}">delete</a></td>
@@ -77,11 +77,11 @@
                 <td>${foundList.address}</td>
                 <td>${foundList.class_room}</td>
                 <td>${foundList.grade}</td>
-                <td><a href="tel:${student.emergency_phone1}">${student.emergency_phone1}</a></td>
-                <td><a href="tel:${student.emergency_phone1}">${student.emergency_phone2}</a></td>
+                <td><a href="tel:${foundList.emergency_phone1}">${foundList.emergency_phone1}</a></td>
+                <td><a href="tel:${foundList.emergency_phone2}">${foundList.emergency_phone2}</a></td>
                 <td>${foundList.parent_status}</td>
-                <td><a  href="editStudentServlet?editID=${student.id}">edit</a></td>
-                <td><a  href="deleteStudent?deleteID=${student.id}">delete</a></td>
+                <td><a  href="editStudentServlet?editID=${foundList.id}">edit</a></td>
+                <td><a  href="deleteStudent?deleteID=${foundList.id}">delete</a></td>
             </tr>
         </c:forEach>
 
